@@ -35,8 +35,8 @@ if(isset($data["error"])){
                     </div>
                     <div class="input-field col s8 offset-s2">
                         <i class="material-icons prefix">lock</i>
-                        <input id="cmdp" name="cmdp" type="password" class="validate">
-                        <label for="cmdp">Confirmation du mot de passe</label>
+                        <input id="mdpc" name="mdpc" type="password" class="validate">
+                        <label for="mdpc">Confirmation du mot de passe</label>
                     </div>
                 </div>
 
