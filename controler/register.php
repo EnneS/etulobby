@@ -1,4 +1,7 @@
 <?php
+
+include_once("../model/DAO_class.php");
+
 $data;
 GLOBAL $data;
 
@@ -23,14 +26,17 @@ if(isset($_POST["valider"]) && $_POST["nom"] != "" && $_POST["prenom"] != "" && 
   $semestre = $_POST["semestre"];
   $mdp = $_POST["mdp"];
   $mdpc = $_POST["mdpc"];
-
+  echo $nom;
+  echo $prenom;
+  echo $semestre;
+  echo $mdp;
   // Vérification MDP
   // S'ils concordent on inscrit l'utilisateur dans la base de donnée
   // Sinon on renvoie une erreur.
   if($mdp == $mdpc){
 
     // A COMPLETER : VOIR TO-DO LIST
-
+    $dao->inscrireUser($nom, $prenom, $semestre, $mdp);
 
   } else {
     $data["error"] = "Les mots de passe ne correspondent pas.";
