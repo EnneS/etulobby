@@ -4,11 +4,11 @@
       // L'objet local PDO de la base de donnée
       private $db;
       // Le type, le chemin et le nom de la base de donnée
-      private $database = '../model/db/etulobby.db';
+      private $database = 'sqlite:../model/db/etulobby.db';
 
       // Constructeur chargé d'ouvrir la BD
       function __construct() {
-     //   $this->db = new PDO($this->database);
+        $this->db = new PDO($this->database);
       }
 
       function inscrireUser($nom, $prenom, $mdp){
