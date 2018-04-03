@@ -10,6 +10,7 @@ GLOBAL $data;
 // ==========================================
 // * Créer une classe DAO afin d'intéragir avec la base de donnée :
 //    - Récupérer un user
+//    - utiliser des htmlspecialchar
 //
 //
 // * Rediriger l'utilisateur vers une page "success.php" qui elle même le redirigera vers "index.php".

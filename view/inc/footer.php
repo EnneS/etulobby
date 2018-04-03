@@ -5,12 +5,11 @@
                 <img src="../view/img/header-logo.png">
             </div>
             <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
+                <h5 class="white-text">I.U.T.2<br>Institut Universitaire de Technologie</h5>
                 <ul>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">2 Place Doyen Gosse</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">38000 Grenoble</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">04 76 28 45 09</a></li>
                 </ul>
             </div>
         </div>
@@ -18,7 +17,7 @@
     <div class="footer-copyright">
         <div class="container">
             © 2014 Copyright EtuLobby
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            <a class="grey-text text-lighten-4 right" href="#!">Créé par Nathan S. & Théophile G.</a>
         </div>
     </div>
 </footer>
