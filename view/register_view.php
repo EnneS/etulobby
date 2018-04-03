@@ -1,9 +1,10 @@
 <?php include("../view/inc/header_connexion.php");
 
-if(isset($data["error"])){
-    echo $data["error"];
-}
+if(isset($data["result"])) {
+  echo $data["result"];
 
+  // $data["resultId"] contient le code du résultat (1 = succès, 0 = erreur)
+}
 ?>
 
 

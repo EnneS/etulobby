@@ -8,7 +8,7 @@ if(isset($_POST["valider"]) && $_POST["login"] != "" && $_POST["mdp"] != ""){
   if($dao->verifConnexion($login, $mdp)){
     echo "yessssssssssssss";
   } else {
-    echo "putin";
+    $data["error"] = "Connexion refusée. Login ou mot de passe incorrect.";
   }
 
 } else if(isset($_POST["valider"])) { // Le bouton validé a été cliqué et un champ est incomplet.

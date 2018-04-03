@@ -28,8 +28,7 @@
         $stmt->bindParam(4, $mdp);
 
 	$stmt->execute();
-        var_dump($stmt->errorInfo());
-      }
+}
 
       function verifConnexion($login, $mdp){
         $stmt = $this->db->prepare("SELECT mdp FROM users WHERE login = ?");

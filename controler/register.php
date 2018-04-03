@@ -22,26 +22,24 @@ if(isset($_POST["valider"]) && $_POST["nom"] != "" && $_POST["prenom"] != "" && 
   $prenom = $_POST["prenom"];
   $mdp = $_POST["mdp"];
   $mdpc = $_POST["mdpc"];
-  echo $nom;
-  echo $prenom;
-  echo $mdp;
  
 // Vérification MDP
   // S'ils concordent on inscrit l'utilisateur dans la base de donnée
   // Sinon on renvoie une erreur.
   if($mdp == $mdpc){
 
-    // A COMPLETER : VOIR TO-DO LIST
     $dao->inscrireUser($nom, $prenom, $mdp);
-
+    $data["result"] = "Inscription réussie ! Redirection vers l'accueil...";
+    $data["resultId"] = 1;
   } else {
-    $data["error"] = "Les mots de passe ne correspondent pas.";
-  }
-
-} else if(isset($_POST["valider"])) { // Le bouton validé a été cliqué et un champ est incomplet.
-  $data["error"] = "Un champ est incomplet.";
+    $data["result"] = "Les mots de passe ne correspondent pas.";
+    $data["resultId"] = 0;
 }
 
+} else if(isset($_POST["valider"])) { // Le bouton validé a été cliqué et un champ est incomplet.
+   $data["result"] = "Un champ est incomplet.";
+   $data["resultId"] = 0;
+}
 
 include_once("../view/register_view.php");
 ?>
