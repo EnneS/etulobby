@@ -17,8 +17,10 @@ GLOBAL $data;
 // =========================================
 
 // Le bouton validé a été cliqué et les tout les champs sont renseignés.
-if(isset($_POST["valider"]) &&$_POST["id"] != "" && $_POST["mdp"] != "" && $_POST["mdpc"] != ""){
-  $id = $_POST["id"];
+if(isset($_POST["valider"]) && $_POST["nom"] != "" && $_POST["prenom"] != "" && $_POST["semestre"] != "" && $_POST["mdp"] != "" && $_POST["mdpc"] != ""){
+  $nom = $_POST["nom"];
+  $prenom = $_POST["prenom"];
+  $semestre = $_POST["semestre"];
   $mdp = $_POST["mdp"];
   $mdpc = $_POST["mdpc"];
 

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Etulobby - Inscription</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
   </head>
   <body>
     <div id="page">
@@ -22,14 +22,20 @@
 
     <?php
     if(isset($data["error"])){
-        echo $error;
+        echo $data["error"];
     }
     ?>
 
     <div id="form">
       <form action="register.php" method="post">
-        <label for="id">* Identifiant :</label>
-        <input type="text" name="id" id="id" placeholder=""><br>
+        <label for="id">* Nom :</label>
+        <input type="text" name="nom" id="nom" placeholder=""><br>
+
+        <label for="id">* Prenom :</label>
+        <input type="text" name="prenom" id="prenom" placeholder=""><br>
+
+        <label for="id">* Semestre :</label>
+        <input type="text" name="semestre" id="semestre" placeholder=""><br>
 
         <label for="mdp">* Mot de passe :</label>
         <input type="password" name="mdp" id="mdp" value=""><br>

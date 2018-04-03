@@ -29,7 +29,7 @@
 
           <input type="submit" name="valider" value="Se connecter">
       </form>
-      <a href="../controler/register.php">S'inscrire</a>
+      <a href="controler/register.php">S'inscrire</a>
     </div>
   </div>
   </body>
