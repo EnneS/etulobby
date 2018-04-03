@@ -26,17 +26,17 @@ if(isset($data["error"])){
                     <div class="input-field col s8 offset-s2">
                         <i class="material-icons prefix">perm_identity</i>
                         <input id="prenom" name="prenom" type="text" class="validate">
-                        <label for="prenom">Prenom</label>
+                        <label class="active" for="prenom">Prenom</label>
                     </div>
                     <div class="input-field col s8 offset-s2">
                         <i class="material-icons prefix">lock</i>
                         <input id="mdp" name="mdp" type="password" class="validate">
-                        <label for="mdp">Mot de passe</label>
+                        <label class="active" for="mdp">Mot de passe</label>
                     </div>
                     <div class="input-field col s8 offset-s2">
                         <i class="material-icons prefix">lock</i>
                         <input id="mdpc" name="mdpc" type="password" class="validate">
-                        <label for="mdpc">Confirmation du mot de passe</label>
+                        <label class="active" for="mdpc">Confirmation du mot de passe</label>
                     </div>
                 </div>
 

@@ -13,12 +13,12 @@
                     <div class="input-field col s12">
                         <i class="material-icons prefix">account_circle</i>
                         <input id="login" name="login" type="text" class="validate">
-                        <label for="login">Identifiant</label>
+                        <label class="active" for="login">Identifiant</label>
                     </div>
                     <div class="input-field col s12">
                         <i class="material-icons prefix">https</i>
                         <input id="mdp" name="mdp" type="password" class="validate">
-                        <label for="mdp">Mot de passe</label>
+                        <label class="active" for="mdp">Mot de passe</label>
                     </div>
                 </div>
 
