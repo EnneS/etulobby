@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Etulobby - Inscription</title>
-    <link rel="stylesheet" href="../view/style/style.css">
+    <link rel="stylesheet" href="../css/style.css">
+
   </head>
   <body>
     <div id="page">

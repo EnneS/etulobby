@@ -1,5 +1,5 @@
 <?php
-include_once("/users/info/etu-s3/souliern/public_html/projet/model/DAO_class.php");
+include_once("../model/DAO_class.php");
 
 if(isset($_POST["valider"]) && $_POST["login"] != "" && $_POST["mdp"] != ""){
   $login = $_POST["login"];
@@ -15,6 +15,6 @@ if(isset($_POST["valider"]) && $_POST["login"] != "" && $_POST["mdp"] != ""){
   $data["error"] = "Un champ est incomplet.";
 }
 
-include("view/connexion_view.php");
+include("../view/connexion_view.php");
 
 ?>

@@ -1,17 +1,14 @@
 <?php
-  require_once("/users/info/etu-s3/souliern/public_html/projet/model/user_class.php");
-
   $dao = new DAO();
-
   class DAO {
       // L'objet local PDO de la base de donnée
       private $db;
       // Le type, le chemin et le nom de la base de donnée
-      private $database = 'sqlite:/users/info/etu-s3/souliern/public_html/projet/etulobby.db';
+      private $database = '../model/db/etulobby.db';
 
       // Constructeur chargé d'ouvrir la BD
       function __construct() {
-        $this->db = new PDO($this->database);
+     //   $this->db = new PDO($this->database);
       }
 
       function inscrireUser($nom, $prenom, $mdp){
