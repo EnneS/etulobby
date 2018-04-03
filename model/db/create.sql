@@ -5,6 +5,7 @@ CREATE TABLE users (
   login TEXT,
   mdp TEXT,
   numSemestre INT,
+  rang INT,
   FOREIGN KEY(numSemestre) REFERENCES semestre(id)
 );
 
@@ -25,4 +26,12 @@ CREATE TABLE module (
 CREATE TABLE semestre (
   id INTEGER PRIMARY KEY,
   nomSemestre TEXT
+);
+
+CREATE TABLE enseigne (
+  idUser INT,
+  idCours INT,
+  FOREIGN KEY(idUser) REFERENCES users(id),
+  FOREIGN KEY (idCours) REFERENCES cours(id),
+  PRIMARY KEY(idUser, idCours)
 )
