@@ -1,4 +1,4 @@
-CREATE TABLE users {
+CREATE TABLE users (
   id INTEGER PRIMARY KEY,
   nom TEXT,
   prenom TEXT,
@@ -6,27 +6,23 @@ CREATE TABLE users {
   mdp TEXT,
   numSemestre INT,
   FOREIGN KEY(numSemestre) REFERENCES semestre(id)
-}
+);
 
-CREATE TABLE cours {
+CREATE TABLE cours (
   id INTEGER PRIMARY KEY,
   nomCours TEXT,
   numModule INT,
   FOREIGN KEY(numModule) REFERENCES module(id)
-}
+);
 
-CREATE TABLE module {
+CREATE TABLE module (
   id INTEGER PRIMARY KEY,
   nomModule TEXT,
   numSemestre INT,
   FOREIGN KEY(numSemestre) REFERENCES semestre(id)
+);
 
-}
-
-CREATE TABLE semestre {
+CREATE TABLE semestre (
   id INTEGER PRIMARY KEY,
-  nomSemestre TEXT,
-}
-
-
-
+  nomSemestre TEXT
+)
