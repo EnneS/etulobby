@@ -34,9 +34,6 @@
         <label for="id">* Prenom :</label>
         <input type="text" name="prenom" id="prenom" placeholder=""><br>
 
-        <label for="id">* Semestre :</label>
-        <input type="text" name="semestre" id="semestre" placeholder=""><br>
-
         <label for="mdp">* Mot de passe :</label>
         <input type="password" name="mdp" id="mdp" value=""><br>
 

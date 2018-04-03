@@ -20,9 +20,10 @@
 
     <h2>Se connecter</h2>
     <div id="form">
-      <form method="post" action="login.php">
-          <label for="id">Identifiant : </label>
-          <input type="text" name="id" id="id" placeholder="identifiant..." value="" /> <br>
+      <?php if(isset($data["error"])) echo $data["error"]; ?>
+      <form method="post" action="index.php">
+          <label for="id">Login : </label>
+          <input type="text" name="login" id="login" placeholder="identifiant..." value="" /> <br>
 
           <label for="mdp">Mot de passe : </label>
           <input type="password" name="mdp" id="mdp" placeholder="mot de passe..." value="" /> <br>
