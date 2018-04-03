@@ -3,12 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>Etulobby - Inscription</title>
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="../view/style/style.css">
   </head>
   <body>
     <div id="page">
     <h1>Etulobby</h1>
-
     <nav>
   <ul>
     <li>Accueil</li>
