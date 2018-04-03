@@ -1,5 +1,5 @@
 <?php
 
-include("view/index_view.php");
+include("view/connexion_view.php");
 
 ?>
