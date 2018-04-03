@@ -43,11 +43,19 @@
                             </div>
 
                             <div class="row center">
-                                <button  style="margin-top: 20px; margin-bottom: -20px;" class="btn waves-effect waves-light grey darken-4" type="submit" name="valider">Connexion</button>
+                                <button  style="width:140px ; margin-top: 20px; margin-bottom: -20px;" class="btn waves-effect waves-light grey darken-4" type="submit" name="valider">Connexion</button>
                             </div>
 
                         </form>
                     </div>
+
+                    <div class="divider"></div>
+
+                    <div class="row center-align">
+                        <!--<button style="width:140px ; margin-top: 20px; margin-bottom: 0px;" class="btn waves-effect waves-light grey darken-4" href="register.php"><a href="register.php">S'inscrire</a></button>-->
+                        <a class="waves-effect waves-light btn-small"  style="color:black; padding-top: 13px;"href="register.php">Vous n'êtes pas encore inscrit ?</a>
+                    </div>
+
                 </div>
             </div>
 

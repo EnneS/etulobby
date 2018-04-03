@@ -20,8 +20,4 @@ function getModules(){
     return $result;
 }
 
-
-
-
-include_once("../view/modules_view.php");
-?>
+include_once("../view/modules_view.php"); ?>
