@@ -12,13 +12,14 @@
       }
 
       function inscrireUser($nom, $prenom, $mdp){
-        $stmt = $this->db->prepare("INSERT INTO USERS VALUES ((SELECT max(id) FROM USERS)
-                                                          , ?
-                                                          , ?
-                                                          , ?
-                                                          , ?
-                                                          , 0
-                                                          , 0)");
+	$stmt = $this->db->prepare("INSERT INTO USERS VALUES ((SELECT max(id)+1 FROM users)
+									, ?
+									, ?
+									, ?
+									, ?
+									, 0
+									, 0)");
+
 
         $login = substr($nom, 0, 7) . substr($prenom, 0, 1);
         $stmt->bindParam(1, $nom);
@@ -26,7 +27,8 @@
         $stmt->bindParam(3, $login);
         $stmt->bindParam(4, $mdp);
 
-        $stmt->execute();
+	$stmt->execute();
+        var_dump($stmt->errorInfo());
       }
 
       function verifConnexion($login, $mdp){

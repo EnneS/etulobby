@@ -22,8 +22,11 @@ if(isset($_POST["valider"]) && $_POST["nom"] != "" && $_POST["prenom"] != "" && 
   $prenom = $_POST["prenom"];
   $mdp = $_POST["mdp"];
   $mdpc = $_POST["mdpc"];
-
-  // Vérification MDP
+  echo $nom;
+  echo $prenom;
+  echo $mdp;
+ 
+// Vérification MDP
   // S'ils concordent on inscrit l'utilisateur dans la base de donnée
   // Sinon on renvoie une erreur.
   if($mdp == $mdpc){
