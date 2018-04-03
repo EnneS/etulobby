@@ -1,6 +1,6 @@
 <?php
 
-include_once("/users/info/etu-s3/souliern/public_html/projet/model/DAO_class.php");
+include_once("../model/DAO_class.php");
 
 $data;
 GLOBAL $data;
@@ -40,5 +40,5 @@ if(isset($_POST["valider"]) && $_POST["nom"] != "" && $_POST["prenom"] != "" && 
 }
 
 
-include_once("/users/info/etu-s3/souliern/public_html/projet/view/register_view.php");
+include_once("../view/register_view.php");
 ?>
