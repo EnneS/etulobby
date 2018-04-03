@@ -15,6 +15,6 @@ if(isset($_POST["valider"]) && $_POST["login"] != "" && $_POST["mdp"] != ""){
   $data["error"] = "Un champ est incomplet.";
 }
 
-include("view/index_view.php");
+include("view/connexion_view.php");
 
 ?>
