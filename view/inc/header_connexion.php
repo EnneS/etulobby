@@ -18,7 +18,7 @@
 
 <nav>
     <div class="nav-wrapper teal darken-3">
-        <a href="#" class="brand-logo center">EtuLobby</a>
+        <a href="#" class="brand-logo center" style="font-weight: bolder;">EtuLobby</a>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
             <!-- <li><a href="sass.html">nav1</a></li> -->
         </ul>

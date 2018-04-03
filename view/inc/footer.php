@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col l6 s12">
-                <img src="view/img/header-logo.png">
+                <img src="../view/img/header-logo.png">
             </div>
             <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">Links</h5>
