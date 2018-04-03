@@ -10,12 +10,12 @@
     <h1>Etulobby</h1>
 
     <nav>
-	<ul>
-	  <a href="#"><li>Accueil</li></a>
-	  <li>Nav 2</li>
-	  <li>Nav 3</li>
-	  <li>Nav 4</li>
-	</ul>
+      <ul>
+       <li>Accueil</li>
+       <li>Nav 2</li>
+       <li>Nav 3</li>
+       <li>Nav 4</li>
+     </ul>
     </nav>
 
     <h2>Se connecter</h2>
@@ -29,8 +29,7 @@
 
           <input type="submit" name="valider" value="Se connecter">
       </form>
-
-      <a href="register.php">S'inscrire</a>
+      <a href="../controler/register.php">S'inscrire</a>
     </div>
   </div>
   </body>
