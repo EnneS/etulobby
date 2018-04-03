@@ -1,6 +1,8 @@
 CREATE TABLE users {
   id INTEGER PRIMARY KEY,
   nom TEXT,
+  prenom TEXT,
+  login TEXT,
   mdp TEXT,
   numSemestre INT,
   FOREIGN KEY(numSemestre) REFERENCES semestre(id)
@@ -10,7 +12,6 @@ CREATE TABLE cours {
   id INTEGER PRIMARY KEY,
   nomCours TEXT,
   numModule INT,
-  path TEXT,
   FOREIGN KEY(numModule) REFERENCES module(id)
 }
 
