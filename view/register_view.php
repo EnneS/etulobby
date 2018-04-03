@@ -1,50 +1,53 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Etulobby - Inscription</title>
-    <link rel="stylesheet" href="../css/style.css">
+<?php include("../view/inc/header_connexion.php");
 
-  </head>
-  <body>
-    <div id="page">
-    <h1>Etulobby</h1>
-    <nav>
-  <ul>
-    <li>Accueil</li>
-    <li>Nav 2</li>
-    <li>Nav 3</li>
-    <li>Nav 4</li>
-  </ul>
-    </nav>
+if(isset($data["error"])){
+    echo $data["error"];
+}
 
-    <h2>S'inscrire</h2>
+?>
 
-    <?php
-    if(isset($data["error"])){
-        echo $data["error"];
-    }
-    ?>
 
-    <div id="form">
-      <form action="register.php" method="post">
-        <label for="id">* Nom :</label>
-        <input type="text" name="nom" id="nom" placeholder=""><br>
 
-        <label for="id">* Prenom :</label>
-        <input type="text" name="prenom" id="prenom" placeholder=""><br>
+    <div class="container">
 
-        <label for="mdp">* Mot de passe :</label>
-        <input type="password" name="mdp" id="mdp" value=""><br>
+        <div class="row">
+            <h4>S'inscrire</h4>
+        </div>
 
-        <label for="mdpc">* Confirmation du mot de passe :</label>
-        <input type="password" name="mdpc" id="mdpc" value=""><br>
+        <div class="row">
+            <form class="col s12" method="post" action="register.php">
 
-        <input type="submit" name="valider" value="S'inscrire"> <br>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="nom" name="nom" type="text" class="validate">
+                        <label for="nom">Nom</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="prenom" name="prenom" type="text" class="validate">
+                        <label for="prenom">Prenom</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="mdp" name="mdp" type="password" class="validate">
+                        <label for="mdp">Mot de passe</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="cmdp" name="cmdp" type="password" class="validate">
+                        <label for="cmdp">Confirmation du mot de passe</label>
+                    </div>
+                </div>
 
-        <span style="font-size: 10px">Les champs suivis d'un * sont obligatoires.</span>
-      </form>
+                <button class="btn waves-effect waves-light grey darken-4" type="submit" name="valider">S'inscrire !
+                    <i class="material-icons right">send</i>
+                </button>
+
+                <h5 style="font-style:italic;">Les champs suivis d'un * sont obligatoires.</h5>
+
+            </form>
+        </div>
+
     </div>
-  </div>
-  </body>
-</html>
+
