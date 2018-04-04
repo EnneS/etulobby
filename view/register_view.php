@@ -16,33 +16,39 @@ if(isset($data["result"])) {
         </div>
 
         <div class="row">
+
             <form class="col s12" method="post" action="register.php">
 
                 <div class="row center-align">
+
                     <div class="input-field col s8 offset-s2">
                         <i class="material-icons prefix">person</i>
                         <input id="nom" name="nom" type="text" class="validate">
                         <label class="active" for="nom">Nom</label>
                     </div>
+
                     <div class="input-field col s8 offset-s2">
                         <i class="material-icons prefix">perm_identity</i>
                         <input id="prenom" name="prenom" type="text" class="validate">
                         <label class="active" for="prenom">Prenom</label>
                     </div>
+
                     <div class="input-field col s8 offset-s2">
                         <i class="material-icons prefix">lock</i>
                         <input id="mdp" name="mdp" type="password" class="validate">
                         <label class="active" for="mdp">Mot de passe</label>
                     </div>
+
                     <div class="input-field col s8 offset-s2">
                         <i class="material-icons prefix">lock</i>
                         <input id="mdpc" name="mdpc" type="password" class="validate">
                         <label class="active" for="mdpc">Confirmation du mot de passe</label>
                     </div>
+
                 </div>
 
                 <div class="row">
-                    <div class="col s8 offset-s2"
+                    <div class="col s8 offset-s2">
                         <h9 style="font-style:italic;">Les champs suivis d'un * sont obligatoires.</h9>
                     </div>
                 </div>
@@ -53,8 +59,8 @@ if(isset($data["result"])) {
                     </button>
                 </div>
 
-
             </form>
+
         </div>
 
     </div>

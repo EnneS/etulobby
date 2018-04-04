@@ -1,4 +1,6 @@
 <?php
+session+
+
 include_once("../model/DAO_class.php");
 
 if(isset($_POST["valider"]) && $_POST["login"] != "" && $_POST["mdp"] != ""){
@@ -6,7 +8,7 @@ if(isset($_POST["valider"]) && $_POST["login"] != "" && $_POST["mdp"] != ""){
   $mdp = $_POST["mdp"];
 
   if($dao->verifConnexion($login, $mdp)){
-    echo "yessssssssssssss";
+    ;
   } else {
     $data["error"] = "Connexion refusée. Login ou mot de passe incorrect.";
   }

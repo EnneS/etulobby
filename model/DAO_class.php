@@ -8,7 +8,8 @@
 
       // Constructeur chargé d'ouvrir la BD
       function __construct() {
-        $this->db = new PDO($this->database);
+
+          $this->db = new PDO($this->database);
       }
 
       function inscrireUser($nom, $prenom, $mdp){
