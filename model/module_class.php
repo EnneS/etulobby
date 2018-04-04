@@ -6,12 +6,12 @@
  * Time: 17:59
  */
 
-class module_class
+class Module
 {
-    private $id;
-    private $nomModule;
-    private $nomSemestre;
-    private $enseignants;
+    public $id;
+    public $nomModule;
+    public $nomSemestre;
+    public $enseignants;
 
 }
 

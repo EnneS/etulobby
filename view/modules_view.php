@@ -22,26 +22,31 @@
             </div>
         </div>
 
+        <ul class="collapsible popout" data-collapsible="accordion">
+
         <?php
 
-        //foreach ($data as )
+        foreach($data["modules"] as $module){
+
+            echo '<li>';
+
+            echo "<div class='collapsible-header'><i class='material-icons'>folder</i>M{$module->id} - {$module->nomModule}</div>";
+
+            echo "<div class='collapsible-body'><span>";
+
+            foreach ($module->enseignants as $enseignant){
+                echo "| $enseignant->nom $enseignant->prenom";
+
+            }
+
+            echo "</span></div>";
+
+            echo '</li>';
+
+        }
 
         ?>
 
-        <ul class="collapsible popout" data-collapsible="accordion">
-            <li>
-                <div class="collapsible-header"><i class="material-icons">folder</i>M3201</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-            <li>
-                <div class="collapsible-header"><i class="material-icons">folder</i>M3202</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-            <li>
-                <div class="collapsible-header"><i class="material-icons">folder</i>M3203</div>
-                <div class="collapsible-body"><span>Blanco la grosse pute.</span></div>
-            </li>
         </ul>
 
     </div>

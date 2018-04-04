@@ -30,8 +30,8 @@ CREATE TABLE semestre (
 
 CREATE TABLE enseigne (
   idUser INT,
-  idCours INT,
+  idModule INT,
   FOREIGN KEY(idUser) REFERENCES users(id),
-  FOREIGN KEY (idCours) REFERENCES cours(id),
+  FOREIGN KEY (idModule) REFERENCES module(id),
   PRIMARY KEY(idUser, idCours)
 )
