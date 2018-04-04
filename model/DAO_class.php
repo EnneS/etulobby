@@ -1,6 +1,7 @@
 <?php
   $dao = new DAO();
   require_once("../model/user_class.php");
+  require_once("../model/module_class.php");
   class DAO {
       // L'objet local PDO de la base de donnée
       private $db;
@@ -19,7 +20,7 @@
 									, ?
 									, ?
 									, ?
-									, 0
+									, 1
 									, 0)");
 
 
@@ -60,5 +61,32 @@
 	$user = $stmt->fetchAll(PDO::FETCH_CLASS, "User");
 	return $user[0];
       }
+
+     function getModulesBySemestre($id){
+      $req = "SELECT * FROM module WHERE numSemestre = ?";
+      $stmt = $this->db->prepare($req);
+      $stmt->bindParam(1,$id);
+      $stmt->execute();
+      $result = $stmt->fetchAll(PDO::FETCH_CLASS,"Module");
+      $result->enseignants = $this->getIdEnseignantByModule($result);
+
+      return $result;
+      }
+
+      function getIdEnseignantByModule($module) {
+      $req = "SELECT idUser FROM enseigne WHERE idModule = ?";
+      $stmt = $this->db->prepare($req);
+      $stmt->bindParam(1,$module->id);
+      $stmt->execute();
+      $result = $stmt->fetchAll();
+
+      $enseignants = array();
+      foreach($result as $tab){
+          array_push($enseignants, $this->getUserById($tab["idUser"]));
+      }
+
+      return $enseignants;
+      }
+
   }
  ?>
