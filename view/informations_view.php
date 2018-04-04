@@ -7,7 +7,7 @@
                 <a href="#" style="font-weight: bolder; margin-top: -10px;">EtuLobby</a>
             </div>
             <ul class="left hide-on-med-and-down">
-                <li><a href="acceuil.php">Acceuil</a></li>
+                <li><a href="accueil.php">Accueil</a></li>
                 <li><a href="afficherModules.php">Mes cours</a></li>
                 <li class="active" ><a href="afficherInformations.php">Mes informations</a></li>
             </ul>
