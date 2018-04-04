@@ -32,9 +32,9 @@
 
                 <div class="col s12 m6">
                     <ul class="collection">
-                        <li class="collection-item">Nom :</li>
-                        <li class="collection-item">Prénom :</li>
-                        <li class="collection-item">Semestre :</li>
+                        <li class="collection-item">Nom : <?php echo $data["nom"]; ?></li>
+                        <li class="collection-item">Prénom : <?php echo $data["prenom"]; ?></li>
+                        <li class="collection-item">Semestre : <?php echo $data["semestre"] ?></li>
                         <li class="collection-item">XXX</li>
                     </ul>
 

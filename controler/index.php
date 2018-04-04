@@ -1,6 +1,5 @@
 <?php
-session+
-
+session_start();
 include_once("../model/DAO_class.php");
 
 if(isset($_POST["valider"]) && $_POST["login"] != "" && $_POST["mdp"] != ""){
@@ -8,7 +7,7 @@ if(isset($_POST["valider"]) && $_POST["login"] != "" && $_POST["mdp"] != ""){
   $mdp = $_POST["mdp"];
 
   if($dao->verifConnexion($login, $mdp)){
-    ;
+    $_SESSION['id'] = $dao->getUserId($login);
   } else {
     $data["error"] = "Connexion refusée. Login ou mot de passe incorrect.";
   }
@@ -17,6 +16,12 @@ if(isset($_POST["valider"]) && $_POST["login"] != "" && $_POST["mdp"] != ""){
   $data["error"] = "Un champ est incomplet.";
 }
 
-include("../view/connexion_view.php");
-
+// Vérification que l'utilisateur est connecté (si l'index id de session existe)
+// S'il ne l'est pas on affiche la page de connexion
+// Sinon on le redirige vers l'accueil.
+if(!isset($_SESSION["id"])){
+  include("../view/connexion_view.php");
+} else {
+  header('Location: accueil.php');
+}
 ?>

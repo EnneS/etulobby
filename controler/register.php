@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include_once("../model/DAO_class.php");
 
 $data;
@@ -42,5 +42,9 @@ if(isset($_POST["valider"]) && $_POST["nom"] != "" && $_POST["prenom"] != "" && 
    $data["resultId"] = 0;
 }
 
-include_once("../view/register_view.php");
+if(!isset($_SESSION["id"])){
+  include_once("../view/register_view.php");
+} else {
+  header('Location: index.php');
+}
 ?>
