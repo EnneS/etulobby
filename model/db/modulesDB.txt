@@ -1,0 +1,13 @@
+1101|Introduction aux systèmes informatiques|1
+1102|Introduction à l'algo et à la programmation|1
+1103|Structures de données et algo fondamentaux|1
+1104|Fondements des bases de données|1
+1105|Conception de documents et d'interfaces numériques|1
+1106|Projet Tutoré|1
+1201|Mathématiques discrètes|1
+1202|Algèbre linéaire|1
+1203|Environnement économique|1
+1204|Fonctionnement des organisations|1
+1205|Fondamentaux de la communication|1
+1206|Anglais et informatique|1
+1207|Connaître le monde professionel|1
