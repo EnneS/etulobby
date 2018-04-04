@@ -6,6 +6,7 @@
         public $login;
         public $mdp;
         public $numSemestre;
+	public $rang;
     }
 
 ?>

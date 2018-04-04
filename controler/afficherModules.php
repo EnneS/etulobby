@@ -5,7 +5,7 @@
  * Date: 03/04/2018
  * Time: 17:12
  */
-
+session_start();
 include_once("../model/DAO_class.php");
 
 $dao = new DAO();
@@ -20,4 +20,10 @@ function getModules(){
     return $result;
 }
 
-include_once("../view/modules_view.php"); ?>
+if(isset($_SESSION["id"])){
+  include_once("../view/modules_view.php");
+} else {
+  header('Location: index.php');
+}
+?>
+

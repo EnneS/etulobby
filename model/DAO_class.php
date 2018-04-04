@@ -1,5 +1,6 @@
 <?php
   $dao = new DAO();
+  require_once("../model/user_class.php");
   class DAO {
       // L'objet local PDO de la base de donnée
       private $db;
@@ -42,6 +43,22 @@
         } else {
           return false;
         }
+      }
+
+      function getUserId($login) {
+	$stmt = $this->db->prepare("SELECT id FROM users WHERE login = ?");
+	$stmt->bindParam(1, $login);
+	$stmt->execute();
+	$res = $stmt->fetchAll();
+	return $res[0]["id"];
+      }
+
+      function getUserById($id) {
+	$stmt = $this->db->prepare("SELECT * FROM users WHERE id = ?");
+	$stmt->bindParam(1, $id);
+	$stmt->execute();
+	$user = $stmt->fetchAll(PDO::FETCH_CLASS, "User");
+	return $user[0];
       }
   }
  ?>
