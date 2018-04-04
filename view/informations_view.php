@@ -4,7 +4,7 @@
         <div class="nav-wrapper teal darken-3">
             <div class="brand-logo center">
                 <a><img  src="../view/img/open-book.png" style="margin-bottom:-5px; padding:20px 15px 0 0; height: 50px; width: auto;"></a>
-                <a href="#" style="font-weight: bolder; margin-top: -10px;">EtuLobby</a>
+                <a href="/" style="font-weight: bolder; margin-top: -10px;">EtuLobby</a>
             </div>
             <ul class="left hide-on-med-and-down">
                 <li><a href="accueil.php">Accueil</a></li>
@@ -35,7 +35,7 @@
                         <li class="collection-item">Nom : <?php echo $data["nom"]; ?></li>
                         <li class="collection-item">Prénom : <?php echo $data["prenom"]; ?></li>
                         <li class="collection-item">Semestre : <?php echo $data["semestre"] ?></li>
-                        <li class="collection-item">XXX</li>
+                        <li class="collection-item">Groupe : <?php echo $data["groupe"] ?></li>
                     </ul>
 
                 </div>

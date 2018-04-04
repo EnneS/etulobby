@@ -1,9 +1,8 @@
+
 <?php include("../view/inc/header_connexion.php");
 
 if(isset($data["result"])) {
-  echo $data["result"];
-
-  // $data["resultId"] contient le code du résultat (1 = succès, 0 = erreur)
+  echo "<script>M.toast({html: '{$data["result"]}', classes: 'rounded'});</script>";
 }
 ?>
 
@@ -66,4 +65,3 @@ if(isset($data["result"])) {
     </div>
 
 <?php include("../view/inc/footer.php");?>
-

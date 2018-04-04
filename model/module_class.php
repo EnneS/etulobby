@@ -14,4 +14,3 @@ class Module
     public $enseignants;
 
 }
-

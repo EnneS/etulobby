@@ -4,7 +4,7 @@
     <div class="nav-wrapper teal darken-3">
         <div class="brand-logo center">
             <a><img  src="../view/img/open-book.png" style="margin-bottom:-5px; padding:20px 15px 0 0; height: 50px; width: auto;"></a>
-            <a href="#" style="font-weight: bolder; margin-top: -10px;">EtuLobby</a>
+            <a href="/" style="font-weight: bolder; margin-top: -10px;">EtuLobby</a>
         </div>
         <ul class="left hide-on-med-and-down">
             <li class="active" ><a href="accueil.php">Accueil</a></li>
@@ -18,7 +18,7 @@
 
     <div class="row">
         <div class="row center" style="padding: 20px;">
-            <h4 style="font-weight: 700;">Acceuil</h4>
+            <h4 style="font-weight: 700;">Accueil</h4>
         </div>
     </div>
 

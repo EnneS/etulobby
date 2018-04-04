@@ -15,7 +15,7 @@
       }
 
       function inscrireUser($nom, $prenom, $mdp){
-	$stmt = $this->db->prepare("INSERT INTO USERS VALUES ((SELECT max(id)+1 FROM users)
+        $stmt = $this->db->prepare("INSERT INTO USERS VALUES ((SELECT max(id)+1 FROM users)
 									, ?
 									, ?
 									, ?
@@ -24,14 +24,17 @@
 									, 0)");
 
 
-        $login = substr($nom, 0, 7) . substr($prenom, 0, 1);
+        $login = strtolower(substr($nom, 0, 7) . substr($prenom, 0, 1));
+        $nom = ucfirst($nom);
+        $prenom = ucfirst($prenom);
+
         $stmt->bindParam(1, $nom);
         $stmt->bindParam(2, $prenom);
         $stmt->bindParam(3, $login);
         $stmt->bindParam(4, $mdp);
 
-	$stmt->execute();
-}
+	      $stmt->execute();
+      }
 
       function verifConnexion($login, $mdp){
         $stmt = $this->db->prepare("SELECT mdp FROM users WHERE login = ?");
@@ -47,36 +50,39 @@
       }
 
       function getUserId($login) {
-	$stmt = $this->db->prepare("SELECT id FROM users WHERE login = ?");
-	$stmt->bindParam(1, $login);
-	$stmt->execute();
-	$res = $stmt->fetchAll();
-	return $res[0]["id"];
+	       $stmt = $this->db->prepare("SELECT id FROM users WHERE login = ?");
+         $stmt->bindParam(1, $login);
+         $stmt->execute();
+         $res = $stmt->fetchAll();
+         return $res[0]["id"];
       }
 
       function getUserById($id) {
-	$stmt = $this->db->prepare("SELECT * FROM users WHERE id = ?");
-	$stmt->bindParam(1, $id);
-	$stmt->execute();
-	$user = $stmt->fetchAll(PDO::FETCH_CLASS, "User");
-	return $user[0];
+        $stmt = $this->db->prepare("SELECT * FROM users WHERE id = ?");
+        $stmt->bindParam(1, $id);
+        $stmt->execute();
+        $user = $stmt->fetchAll(PDO::FETCH_CLASS, "User");
+        return $user[0];
       }
 
      function getModulesBySemestre($id){
-      $req = "SELECT * FROM module WHERE numSemestre = ?";
-      $stmt = $this->db->prepare($req);
+       $req = "SELECT * FROM module WHERE numSemestre = ?";
+       $stmt = $this->db->prepare($req);
       $stmt->bindParam(1,$id);
-      $stmt->execute();
-      $result = $stmt->fetchAll(PDO::FETCH_CLASS,"Module");
-      $result->enseignants = $this->getIdEnseignantByModule($result);
+       $stmt->execute();
+       $result = $stmt->fetchAll(PDO::FETCH_CLASS,"Module");
+
+      foreach ($result as $module) {
+        $module->enseignants = $this->getIdEnseignantByModule($module->id);
+      }
 
       return $result;
       }
 
-      function getIdEnseignantByModule($module) {
+      function getIdEnseignantByModule($id) {
       $req = "SELECT idUser FROM enseigne WHERE idModule = ?";
       $stmt = $this->db->prepare($req);
-      $stmt->bindParam(1,$module->id);
+      $stmt->bindParam(1,$id);
       $stmt->execute();
       $result = $stmt->fetchAll();
 
