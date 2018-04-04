@@ -40,7 +40,7 @@
             </li>
             <li>
                 <div class="collapsible-header"><i class="material-icons">folder</i>M3203</div>
-                <div class="collapsible-body"><span>Blanco la grosse pute.</span></div>
+                <div class="collapsible-body"><span>c manifik.</span></div>
             </li>
         </ul>
 

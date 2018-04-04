@@ -1,3 +1,3 @@
 <?php
-include($rootPath."/controler/index.php");
+header('Location: controler/');
  ?>
