@@ -6,14 +6,15 @@
  * Time: 10:22
  */
 session_start();
-include_once("model/DAO_class.php");
+include_once("../model/DAO_class.php");
 
 if(isset($_SESSION["id"])){
 
     $dao = new DAO();
 
-    if (isset($_GET["id"])){
+    if (isset($_GET["id"]) && isset($_GET["nom"])){
         $data["idCours"] = $_GET["id"];
+        $data["nomCours"] = $_GET["nom"];
     } else {
         header('Location: index.php');
     }

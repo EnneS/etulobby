@@ -2,6 +2,7 @@
   $dao = new DAO();
   require_once("../model/user_class.php");
   require_once("../model/module_class.php");
+  require_once("../model/cours_class.php");
   class DAO {
       // L'objet local PDO de la base de donnée
       private $db;
@@ -72,6 +73,7 @@
 
       foreach ($result as $module) {
         $module->enseignants = $this->getIdEnseignantByModule($module->id);
+        $module->cours = $this -> getIdCoursByModule($module->id);
       }
 
       return $result;
@@ -98,7 +100,6 @@
           $stmt->bindParam(1,$id);
           $stmt->execute();
           $cours = $stmt->fetchAll(PDO::FETCH_CLASS,"Cours");
-
           return $cours;
       }
 

@@ -6,7 +6,7 @@
  * Time: 10:41
  */
 
-class cours_class
+class Cours
 {
     public $id;
     public $nomCours;

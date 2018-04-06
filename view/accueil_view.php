@@ -17,8 +17,8 @@
 <div class="container">
 
     <div class="row">
-        <div class="row center" style="padding: 20px;">
-            <h4 style="font-weight: 700;">Accueil</h4>
+        <div class="row center" style="padding-top: 20px; margin:5px;">
+            <h5 style="font-weight: 400;">Dashboard</h5>
         </div>
     </div>
 

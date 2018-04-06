@@ -12,7 +12,8 @@
                 <li class="active" ><a href="afficherInformations.php">Mes informations</a></li>
             </ul>
             <ul class="right hide-on-med-and-down">
-                <li><a>Déconnexion</a></li>
+                <li><a style="vertical-align: center; href="deconnxion.php">Déconnexion</a></li>
+                <li><i class="material-icons" style="margin-right: 25px;"> exit_to_app</i></li>
             </ul>
         </div>
     </nav>
@@ -20,8 +21,8 @@
     <div class="container">
 
         <div class="row">
-            <div class="row center" style="padding: 20px;">
-                <h4 style="font-weight: 700;">Informations personnelles</h4>
+            <div class="row center" style="padding-top: 20px; margin:5px;">
+                <h5 style="font-weight: 400;">Informations personnelles</h5>
             </div>
         </div>
 

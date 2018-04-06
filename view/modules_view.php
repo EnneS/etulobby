@@ -17,8 +17,9 @@
     <div class="container">
 
         <div class="row">
-            <div class="row center" style="padding: 20px;">
-                <h4 style="font-weight: 700;">Liste des modules</h4>
+
+            <div class="row center" style="padding-top: 20px; margin:5px;">
+                <h5 style="font-weight: 400;">Modules et cours</h5>
             </div>
         </div>
 
@@ -33,16 +34,18 @@
             echo "<div class='collapsible-header'><i class='material-icons'>folder</i>M{$module->id} - {$module->nomModule}</div>";
 
             echo "<div class='collapsible-body'><span>";
-            echo "Cours :";
+            echo "<ul class='collection'>";
             foreach ($module->cours as $cours){
 
-                echo "<ul class='collection'>";
-                echo "<li class='collection-item'><a href='afficherCours.php?id=".$cours->id."'>$cours->nomCours</a></li>";
-                echo "</ul>";
+                echo "<li class='collection-item'>";
+                echo "<a href='afficherCours.php?id=".$cours->id."&nom=".$cours->nomCours."'>$cours->nomCours</a>";
+                echo "</li>";
             }
 
-            echo "</span></div>";
+            echo "</ul>";
 
+            echo "</span></div>";
+    
             echo "<div class='collapsible-body'><span style='font-style: italic;'>";
             echo "Enseigné par :";
             foreach ($module->enseignants as $enseignant){

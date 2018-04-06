@@ -17,14 +17,16 @@
     <div class="container">
 
         <div class="row">
-            <div class="row center" style="padding: 20px;">
-                <h4 style="font-weight: 700;"><?php ?></h4>
+            <div class="row center" style="padding-top: 20px; margin:5px;">
+                <h5 style="font-weight: 400;"><?php echo $data['nomCours']?></h5>
             </div>
         </div>
 
-        <div class="row">
-            <div class="col l10 offset-l1">
-                <object width="auto" height="auto" data="../data/<?php echo data['idCours'] ?>.pdf"></object>
+
+
+        <div class="row center">
+            <div class="col l12">
+                <object form="" type="application/pdf" width="1000px" height="700px" data="../data/<?php echo $data['idCours'] ?>.pdf"></object>
             </div>
         </div>
 
