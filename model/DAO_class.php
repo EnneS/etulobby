@@ -14,7 +14,7 @@
           $this->db = new PDO($this->database);
       }
 
-      function inscrireUser($nom, $prenom, $mdp){
+      function inscrireUser($nom, $prenom, $mdp, $login){
         $stmt = $this->db->prepare("INSERT INTO USERS VALUES ((SELECT max(id)+1 FROM users)
 									, ?
 									, ?
@@ -23,8 +23,6 @@
 									, 1
 									, 0)");
 
-
-        $login = strtolower(substr($nom, 0, 7) . substr($prenom, 0, 1));
         $nom = ucfirst($nom);
         $prenom = ucfirst($prenom);
 

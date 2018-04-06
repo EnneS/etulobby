@@ -1,7 +1,13 @@
 
-<?php include("../view/inc/header_connexion.php");
-
+<?php
+include("../view/inc/header_connexion.php");
 if(isset($data["result"])) {
+  if ($data["resultId"] == 1){
+    // Redirection si l'inscription est un succès + on dit le login à l'utilisateur.
+    echo "<script>M.toast({html: 'Votre login est : {$data["login"]}', classes: 'rounded'});</script>";
+    echo "<meta http-equiv='refresh' content='4; URL=index.php'>";
+  }
+  // Affichage du message après tentative d'inscription (erreur/succès).
   echo "<script>M.toast({html: '{$data["result"]}', classes: 'rounded'});</script>";
 }
 ?>

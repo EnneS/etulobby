@@ -21,14 +21,16 @@ if(isset($_POST["valider"]) && $_POST["nom"] != "" && $_POST["prenom"] != "" && 
   $prenom = $_POST["prenom"];
   $mdp = $_POST["mdp"];
   $mdpc = $_POST["mdpc"];
+  $login = strtolower(substr($nom, 0, 7) . substr($prenom, 0, 1));
 
 // Vérification MDP
   // S'ils concordent on inscrit l'utilisateur dans la base de donnée
   // Sinon on renvoie une erreur.
   if($mdp == $mdpc){
-    $dao->inscrireUser($nom, $prenom, $mdp);
+    $dao->inscrireUser($nom, $prenom, $mdp, $login);
     $data["result"] = "Inscription réussie ! Redirection...";
     $data["resultId"] = 1;
+    $data["login"] = $login;
   } else {
     $data["result"] = "Les mots de passe ne correspondent pas.";
     $data["resultId"] = 0;

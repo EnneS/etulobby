@@ -1,4 +1,11 @@
-<?php include("../view/inc/header_connexion.php");?>
+<?php
+include("../view/inc/header_connexion.php");
+
+if(isset($data["error"])){
+  echo "<script>M.toast({html: '{$data["error"]}', classes: 'rounded'});</script>";
+}
+
+?>
 
     <div class="container">
 
@@ -63,5 +70,3 @@
     </div>
 
 <?php include("../view/inc/footer.php");?>
-
-
