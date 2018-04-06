@@ -29,8 +29,12 @@ if(isset($_SESSION["id"])){
         }
     }
 
+    // Récupération de la liste des cours à réviser pour l'utilisateur courant
     $data["coursRevision"] = $dao->getCoursRevisionByIdUser($data["idUser"]);
 
+    // Récupération des messages des profs.
+    $data["messages"] = $dao->getAllMessage();
+    
     include_once("../view/accueil_view.php");
 } else {
     header('Location: index.php');
