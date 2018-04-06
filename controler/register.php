@@ -21,7 +21,7 @@ if(isset($_POST["valider"]) && $_POST["nom"] != "" && $_POST["prenom"] != "" && 
   $prenom = $_POST["prenom"];
   $mdp = $_POST["mdp"];
   $mdpc = $_POST["mdpc"];
-  $login = strtolower(substr($nom, 0, 7) . substr($prenom, 0, 1));
+  $login = $dao->newLogin($nom,$prenom); 
 
 // Vérification MDP
   // S'ils concordent on inscrit l'utilisateur dans la base de donnée

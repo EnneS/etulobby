@@ -15,6 +15,30 @@
           $this->db = new PDO($this->database);
       }
 
+
+      function newLogin($nom, $prenom){
+        // On veut créer un nouveau login qui n'existe pas déjà dans la base de donnée.
+        // Pour ça, on récupère tout les logins existant et on vérifie si celui qu'on veut créé n'existe pas déjà
+        // Tant que ce n'est pas le cas, on modifie le login
+        $login = strtolower(substr($nom, 0, 7) . substr($prenom, 0, 1));
+
+        $stmt = $this->db->prepare("SELECT login FROM users");
+        $stmt->execute();
+        $res = $stmt->fetchAll();
+        $i = 1;
+
+        $loginTab = array();
+        foreach ($res as $logintemp) {
+          array_push($loginTab, $logintemp[0]);
+        }
+
+        while(in_array($login, $loginTab)){
+          $login = strtolower(substr($nom, 0,7-$i) . substr($prenom, 0, 1+$i));
+        $i++;
+        }
+        return $login;
+      }
+
       function inscrireUser($nom, $prenom, $mdp, $login){
         $stmt = $this->db->prepare("INSERT INTO USERS VALUES ((SELECT max(id)+1 FROM users)
 									, ?
