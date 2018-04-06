@@ -12,7 +12,8 @@
                 <li class="active" ><a href="afficherInformations.php">Mes informations</a></li>
             </ul>
             <ul class="right hide-on-med-and-down">
-                <li><a style="vertical-align: center; href="deconnxion.php">Déconnexion</a></li>
+		<a href="deconnexion.php?logout='true'"> deco </a>
+                <li><a style="vertical-align: center; href="deconnexion.php">Déconnexion</a></li>
                 <li><i class="material-icons" style="margin-right: 25px;"> exit_to_app</i></li>
             </ul>
         </div>
