@@ -1,4 +1,6 @@
-<?php include("../view/inc/header.php"); ?>
+<?php include("../view/inc/header.php");
+
+$coursRevision = $data["coursRevision"]; ?>
 
 <nav>
     <div class="nav-wrapper teal darken-3">
@@ -17,22 +19,21 @@
 <div class="container">
 
     <div class="row">
-        <div class="row center" style="padding-top: 20px; margin:5px;">
-            <h5 style="font-weight: 400;">Dashboard</h5>
+        <div class="row center" style="padding-top: 20px; margin:2px;">
+            <h4 style="font-weight: 500;">Mon dashboard</h4>
         </div>
     </div>
+
+    <div class="divider" style="margin-bottom: 30px;"></div>
 
     <div class="row">
 
         <div class="col l7">
             <div class="row card-panel grey lighten-4 ">
                 <ul class="collection with-header">
-                    <li class="collection-header"><h5 style="font-weight: 300;">Liste de révision</h5></li>
+                    <li class="collection-header"><h5 style="font-size:20px; font-weight: 300;">Liste de révision<span class="new badge" data-badge-caption="cours"><?php echo sizeof($coursRevision) ?></span></h5></li>
 
                     <?php
-
-                    $coursRevision = $data["coursRevision"];
-                    //var_dump($coursRevision);
 
                     foreach ($coursRevision as $cours){
                         //var_dump($cours);
@@ -55,18 +56,22 @@
 
         <div class="col l4 offset-l1">
             <div class="row card-panel grey lighten-4 ">
+                <div class="row center">
+                    <h5 style="font-size:20px; font-weight: 300;">Informations</h5>
+                </div>
+
                 <ul class="collapsible ">
 
-                    <li>
+                    <li class="active">
                         <div class="collapsible-header"><i class="material-icons">warning</i>Réunion poursuite d'étude</div>
                         <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
                     </li>
                     <li>
-                        <div class="collapsible-header"><i class="material-icons">warning</i>Changement de salle</div>
+                        <div class="collapsible-header"><i class="material-icons">location_on</i>Changement de salle</div>
                         <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
                     </li>
                     <li>
-                        <div class="collapsible-header"><i class="material-icons">warning</i>Absence de XXX</div>
+                        <div class="collapsible-header"><i class="material-icons">autorenew</i>Absence de XXX</div>
                         <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
                     </li>
                 </ul>

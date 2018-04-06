@@ -21,10 +21,12 @@
     <div class="container">
 
         <div class="row">
-            <div class="row center" style="padding-top: 20px; margin:5px;">
-                <h5 style="font-weight: 400;">Informations personnelles</h5>
+            <div class="row center" style="padding-top: 20px; margin:2px;">
+                <h4 style="font-weight: 500;">Informations personnelles</h4>
             </div>
         </div>
+
+        <div class="divider" style="margin-bottom: 30px;"></div>
 
         <div class="row">
             <div class="col l6 offset-l3">

@@ -19,23 +19,12 @@
 
         <!--titre-->
         <div class="row">
-            <div class="row center" style="padding-top: 20px; margin:5px;">
-                <h5 style="font-weight: 400;">Modules et cours</h5>
+            <div class="row center" style="padding-top: 20px; margin:2px;">
+                <h4 style="font-weight: 500;">Mes cours</h4>
             </div>
         </div>
 
-        <!--selecteur semestre-->
-<!--        <div class="row">
-            <div class="input-field col s12">
-                <select>
-                    <option value="" disabled selected>Choose your option</option>
-                    <option value="1" href="accueil.php">Option 1</option>
-                    <option value="2">Option 2</option>
-                    <option value="3">Option 3</option>
-                </select>
-                <label></label>
-            </div>
-        </div>-->
+        <div class="divider" style="margin-bottom: 30px;"></div>
 
         <!--affichage modules et cours-->
         <ul class="collapsible popout" data-collapsible="accordion">
