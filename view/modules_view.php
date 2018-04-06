@@ -33,8 +33,20 @@
             echo "<div class='collapsible-header'><i class='material-icons'>folder</i>M{$module->id} - {$module->nomModule}</div>";
 
             echo "<div class='collapsible-body'><span>";
+            echo "Cours :";
+            foreach ($module->cours as $cours){
+
+                echo "<ul class='collection'>";
+                echo "<li class='collection-item'><a href='afficherCours.php?id=".$cours->id."'>$cours->nomCours</a></li>";
+                echo "</ul>";
+            }
+
+            echo "</span></div>";
+
+            echo "<div class='collapsible-body'><span style='font-style: italic;'>";
+            echo "Enseigné par :";
             foreach ($module->enseignants as $enseignant){
-                echo "| $enseignant->nom $enseignant->prenom";
+                echo " $enseignant->nom $enseignant->prenom |";
 
             }
 

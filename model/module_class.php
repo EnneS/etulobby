@@ -12,5 +12,7 @@ class Module
     public $nomModule;
     public $nomSemestre;
     public $enseignants;
+    public $cours;
+
 
 }

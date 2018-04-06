@@ -11,6 +11,9 @@
                 <li><a href="afficherModules.php">Mes cours</a></li>
                 <li class="active" ><a href="afficherInformations.php">Mes informations</a></li>
             </ul>
+            <ul class="right hide-on-med-and-down">
+                <li><a>Déconnexion</a></li>
+            </ul>
         </div>
     </nav>
 
@@ -22,27 +25,30 @@
             </div>
         </div>
 
+        <div class="row">
+            <div class="col l6 offset-l3">
+                <div class="row card-panel grey lighten-4 ">
 
-        <div class="card-panel grey lighten-4">
 
-            <div class="row">
-                <div class="col s12 m2 offset-m2">
-                    <i class="material-icons prefix large">person</i>
-                </div>
+                        <div class="col s12 l2 offset-l">
+                            <i class="material-icons prefix large">person</i>
+                        </div>
 
-                <div class="col s12 m6">
-                    <ul class="collection">
-                        <li class="collection-item">Nom : <?php echo $data["nom"]; ?></li>
-                        <li class="collection-item">Prénom : <?php echo $data["prenom"]; ?></li>
-                        <li class="collection-item">Semestre : <?php echo $data["semestre"] ?></li>
-                        <li class="collection-item">Groupe : <?php echo $data["groupe"] ?></li>
-                    </ul>
+                        <div class="col s6 l9 offset-l1">
+                            <ul class="collection">
+                                <li class="collection-item">Nom : <?php echo $data["nom"]; ?></li>
+                                <li class="collection-item">Prénom : <?php echo $data["prenom"]; ?></li>
+                                <li class="collection-item">Semestre : <?php echo $data["semestre"] ?></li>
+                                <li class="collection-item">Groupe : <?php echo $data["groupe"] ?></li>
+                            </ul>
+                        </div>
+
+
 
                 </div>
             </div>
-
-
         </div>
+
 
     </div>
 

@@ -8,6 +8,19 @@
 session_start();
 include_once("model/DAO_class.php");
 
-$dao = new DAO();
+if(isset($_SESSION["id"])){
+
+    $dao = new DAO();
+
+    if (isset($_GET["id"])){
+        $data["idCours"] = $_GET["id"];
+    } else {
+        header('Location: index.php');
+    }
+
+    include_once("../view/cours_view.php");
+} else {
+    header('Location: index.php');
+}
 
 ?>

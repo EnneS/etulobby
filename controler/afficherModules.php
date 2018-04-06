@@ -17,6 +17,7 @@ if(isset($_SESSION["id"])){
     $data["modules"] = $modules;
 
 
+
   include_once("../view/modules_view.php");
 } else {
   header('Location: index.php');
