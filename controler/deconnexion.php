@@ -1,8 +1,8 @@
 <?php
 session_start();
 if(isset($_GET["logout"])) {
-echo "deco";
 unset($_SESSION["id"]);
 }
-header('Location: index.php');
+//header('Location: index.php');
+include_once("../view/connexion_view.php");
 ?>

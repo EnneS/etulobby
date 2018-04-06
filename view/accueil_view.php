@@ -22,6 +22,62 @@
         </div>
     </div>
 
+    <div class="row">
+
+        <div class="col l7">
+            <div class="row card-panel grey lighten-4 ">
+                <ul class="collection with-header">
+                    <li class="collection-header"><h5 style="font-weight: 300;">Liste de révision</h5></li>
+
+                    <?php
+
+                    $coursRevision = $data["coursRevision"];
+                    //var_dump($coursRevision);
+
+                    foreach ($coursRevision as $cours){
+                        //var_dump($cours);
+
+                        echo "<li class='collection-item avatar'>";
+                        echo "<i class='material-icons circle'>import_contacts</i>";
+                        echo "<span class='title'><a style='color: !important;' href='afficherCours.php?id={$cours[0]->id}&nom={$cours[0]->nomCours}'>".$cours[0]->nomCours."</a></span>";
+                        echo "<p>Module M{$cours[0]->numModule}</p>";
+                        echo "<a href='accueil.php?coursDel={$cours[0]->id}' class='secondary-content tooltipped' data-position='bottom' data-tooltip='Supprimer de la liste'><i class=\"material-icons\">clear</i></a>";
+                        echo "</li>";
+
+                    }
+
+                    ?>
+
+                </ul>
+
+            </div>
+        </div>
+
+        <div class="col l4 offset-l1">
+            <div class="row card-panel grey lighten-4 ">
+                <ul class="collapsible ">
+
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">warning</i>Réunion poursuite d'étude</div>
+                        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">warning</i>Changement de salle</div>
+                        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">warning</i>Absence de XXX</div>
+                        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
 
 </div>
 

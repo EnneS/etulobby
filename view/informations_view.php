@@ -12,9 +12,8 @@
                 <li class="active" ><a href="afficherInformations.php">Mes informations</a></li>
             </ul>
             <ul class="right hide-on-med-and-down">
-		<a href="deconnexion.php?logout='true'"> deco </a>
-                <li><a style="vertical-align: center; href="deconnexion.php">Déconnexion</a></li>
-                <li><i class="material-icons" style="margin-right: 25px;"> exit_to_app</i></li>
+                <li><a href="deconnexion.php?logout='true'">Déconnexion</a></li>
+                <li><i style="margin-right: 25px;" class="material-icons">exit_to_app</i></li>
             </ul>
         </div>
     </nav>
@@ -30,7 +29,6 @@
         <div class="row">
             <div class="col l6 offset-l3">
                 <div class="row card-panel grey lighten-4 ">
-
 
                         <div class="col s12 l2 offset-l">
                             <i class="material-icons prefix large">person</i>

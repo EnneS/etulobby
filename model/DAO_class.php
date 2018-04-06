@@ -127,5 +127,62 @@
           return $cours;
       }
 
+      function searchCours($idUser, $idCours){
+          //var_dump($idUser);
+          //var_dump($idCours);
+          $req = "SELECT * FROM revision WHERE idUser = ? AND idCours = ?";
+          $stmt = $this->db->prepare($req);
+          $stmt->bindParam(1,$idUser);
+          $stmt->bindParam(2,$idCours);
+          $stmt->execute();
+          $res = $stmt->fetchAll();
+          if (empty($res)) {
+              return false;
+          }
+          return true;
+      }
+
+      function addCours($idUser, $idCours) {
+          $req = "INSERT INTO revision (idUser, idCours) VALUES (:idUser, :idCours)";
+          $stmt = $this->db->prepare($req);
+          //var_dump($stmt);
+          $stmt -> BindParam(':idUser',$idUser);
+          $stmt -> BindParam(':idCours',$idCours);
+          $stmt -> execute();
+      }
+
+      function delCours($idUser, $idCours) {
+          $req = "DELETE FROM revision WHERE idUser=:idUser AND idCours=:idCours";
+          $stmt = $this->db->prepare($req);
+          $stmt -> execute(array(':idUser'=>$idUser, ':idCours'=>$idCours));
+          $stmt -> execute();
+      }
+
+      function getCoursRevisionByIdUser($idUser) {
+          $req = "SELECT idCours FROM revision WHERE idUser = ?";
+          $stmt = $this->db->prepare($req);
+          $stmt->bindParam(1,$idUser);
+          $stmt->execute();
+          $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+          //var_dump($res);
+          $coursRevision = array();
+          foreach ($res as $idCours){
+              //var_dump($idCours["idCours"]);
+              array_push($coursRevision,$this->getCoursById($idCours["idCours"]));
+          }
+          //var_dump($coursRevision);
+          return $coursRevision;
+      }
+
+      function getCoursById($idCours) {
+          $req = "SELECT * FROM cours WHERE id = ?";
+          $stmt = $this->db->prepare($req);
+          $stmt->bindParam(1,$idCours);
+          $stmt->execute();
+          $cours = $stmt->fetchAll(PDO::FETCH_CLASS,"Cours");
+          return $cours;
+      }
+
   }
  ?>

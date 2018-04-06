@@ -34,4 +34,12 @@ CREATE TABLE enseigne (
   FOREIGN KEY(idUser) REFERENCES users(id),
   FOREIGN KEY (idModule) REFERENCES module(id),
   PRIMARY KEY(idUser, idModule)
-)
+);
+
+CREATE TABLE revision (
+  idUser INT,
+  idCours INT,
+  FOREIGN KEY(idUser) REFERENCES users(id),
+  FOREIGN KEY (idCours) REFERENCES cours(id),
+  PRIMARY KEY(idUser, idCours)
+);

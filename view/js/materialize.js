@@ -7,6 +7,9 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+var elem = document.querySelector('select');
+var instance = M.FormSelect.init(elem, options);
+
 // Check for jQuery.
 if (typeof jQuery === 'undefined') {
   // Check if require is a defined function.
@@ -10018,5 +10021,6 @@ if (Vel) {
 
     $.error('Method ' + methodOrOptions + ' does not exist on jQuery.tap-target');
   };
+
 })(jQuery);
 
