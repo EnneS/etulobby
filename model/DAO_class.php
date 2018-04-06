@@ -3,6 +3,8 @@
   require_once("../model/user_class.php");
   require_once("../model/module_class.php");
   require_once("../model/cours_class.php");
+  require_once("../model/message_class.php");
+
   class DAO {
       // L'objet local PDO de la base de donnée
       private $db;
@@ -128,8 +130,6 @@
       }
 
       function searchCours($idUser, $idCours){
-          //var_dump($idUser);
-          //var_dump($idCours);
           $req = "SELECT * FROM revision WHERE idUser = ? AND idCours = ?";
           $stmt = $this->db->prepare($req);
           $stmt->bindParam(1,$idUser);
@@ -165,13 +165,10 @@
           $stmt->execute();
           $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-          //var_dump($res);
           $coursRevision = array();
           foreach ($res as $idCours){
-              //var_dump($idCours["idCours"]);
               array_push($coursRevision,$this->getCoursById($idCours["idCours"]));
           }
-          //var_dump($coursRevision);
           return $coursRevision;
       }
 
@@ -182,6 +179,20 @@
           $stmt->execute();
           $cours = $stmt->fetchAll(PDO::FETCH_CLASS,"Cours");
           return $cours;
+      }
+
+      function addMessage($titre, $message){
+        $stmt = $this->db->prepare("INSERT INTO message VALUES (?, ?)");
+        $stmt->bindParam(1,$titre);
+        $stmt->bindParam(2,$message);
+        $stmt->execute();
+      }
+
+      function getAllMessage(){
+        $stmt = $this->db->prepare("SELECT * FROM message");
+        $stmt->execute();
+        $messages = $stmt->fetchAll(PDO::FETCH_CLASS,"Message");
+        return $messages;
       }
 
   }
