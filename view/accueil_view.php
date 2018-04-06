@@ -1,5 +1,10 @@
 <?php include("../view/inc/header.php");
 
+if(isset($data["result"])) {
+  // Affichage du message après tentative d'ajout de message (erreur/succès).
+  echo "<script>M.toast({html: '{$data["result"]}', classes: 'rounded'});</script>";
+}
+
 $coursRevision = $data["coursRevision"]; ?>
 
 <nav>
@@ -64,17 +69,13 @@ $coursRevision = $data["coursRevision"]; ?>
                 </div>
 
                 <ul class="collapsible ">
-
                   <?php
-
                   foreach ($data["messages"] as $message) {
                     echo "<li class='active'>";
                     echo "<div class='collapsible-header'><i class='material-icons'>warning</i>".$message->titre."</div>";
                     echo "<div class='collapsible-body'><span>".$message->message."</span></div>";
                     echo"</li>";
                   }
-
-
                    ?>
                 </ul>
 
