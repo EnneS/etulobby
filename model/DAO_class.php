@@ -182,7 +182,7 @@
       }
 
       function addMessage($titre, $message){
-        $stmt = $this->db->prepare("INSERT INTO message VALUES (?, ?)");
+        $stmt = $this->db->prepare("INSERT INTO message VALUES ((SELECT max(id) + 1 FROM message), ?, ?)");
         $stmt->bindParam(1,$titre);
         $stmt->bindParam(2,$message);
         $stmt->execute();
