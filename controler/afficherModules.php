@@ -9,12 +9,10 @@ session_start();
 include_once("../model/DAO_class.php");
 
 if(isset($_SESSION["id"])){
-
-    $dao = new DAO();
-
-    $user = $dao->getUserById($_SESSION["id"]);
-    $modules = $dao->getModulesBySemestre($user->numSemestre);
-    $data["modules"] = $modules;
+  $data["idUser"] = $_SESSION["id"];
+  $user = $dao->getUserById($data["idUser"]);
+  $modules = $dao->getModulesBySemestre($user->numSemestre);
+  $data["modules"] = $modules;
 
 
 

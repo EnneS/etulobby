@@ -8,11 +8,8 @@ GLOBAL $data;
 // ==========================================
 // TO-DO LIST :
 // ==========================================
-// * Créer une classe DAO afin d'intéragir avec la base de donnée :
-//    - utiliser des htmlspecialchar
-//
-//
-//
+//  * utiliser des htmlspecialchar
+//  * encrypter les mdp en md5
 // =========================================
 
 // Le bouton validé a été cliqué et les tout les champs sont renseignés.
@@ -21,7 +18,7 @@ if(isset($_POST["valider"]) && $_POST["nom"] != "" && $_POST["prenom"] != "" && 
   $prenom = $_POST["prenom"];
   $mdp = $_POST["mdp"];
   $mdpc = $_POST["mdpc"];
-  $login = $dao->newLogin($nom,$prenom); 
+  $login = $dao->newLogin($nom,$prenom);
 
 // Vérification MDP
   // S'ils concordent on inscrit l'utilisateur dans la base de donnée

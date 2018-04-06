@@ -13,24 +13,23 @@ include_once("../model/DAO_class.php");
 // Il n'est pas sensé pouvoir accéder à cette page manuellement mais on le force à devoir se connecter s'il ne l'est pas
 if(isset($_SESSION["id"])){
 
-    $dao = new DAO();
-    $idUser = $_SESSION["id"];
+    $data["idUser"] = $_SESSION["id"];
 
-    //on ajoute le cour si nécessaire
+    //on ajoute le cours si nécessaire
     if (isset($_GET["coursAdd"])){
         if (!$dao->searchCours($idUser,$_GET["coursAdd"])){
             $dao->addCours($idUser,$_GET["coursAdd"]);
         }
     }
 
-    //on supprime le cour si nécessaire
+    //on supprime le cours si nécessaire
     if (isset($_GET["coursDel"])){
         if ($dao->searchCours($idUser,$_GET["coursDel"])){
             $dao->delCours($idUser,$_GET["coursDel"]);
         }
     }
 
-    $data["coursRevision"] = $dao->getCoursRevisionByIdUser($idUser);
+    $data["coursRevision"] = $dao->getCoursRevisionByIdUser($data["idUser"]);
 
     include_once("../view/accueil_view.php");
 } else {
