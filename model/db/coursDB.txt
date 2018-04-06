@@ -1,0 +1,14 @@
+1|Cours 1|1101
+2|Cours 2|1101
+3|Cours 3|1101
+4|Cours 4|1101
+5|Cours 5|1101
+6|Cours 6|1101
+7|Cours 7|1101
+8|Cours 8|1101
+9|Cours 9|1101
+10|Cours 10|1101
+11|Cours 11|1101
+12|Cours 12|1101
+13|Cours 13|1101
+14|Cours 14|1101

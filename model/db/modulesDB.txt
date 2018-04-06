@@ -11,3 +11,32 @@
 1205|Fondamentaux de la communication|1
 1206|Anglais et informatique|1
 1207|Connaître le monde professionel|1
+2101|Architecture et programmation des mécanismes de bases d'un système informatique|2
+2102|Architecture des réseaux|2
+2103|Bases de la programmation orientée objets|2
+2104|Bases de la conception orientée objets|2
+2105|Introduction aux IHM|2
+2106|Programmation et administration de bases de données|2
+2107|Projet tutoré|2
+2201|Graphes et langages|2
+2202|Analyse et méthodes numériques|2
+2203|Environnement comptable, juridique et social|2
+2204|Gestion de projet informatique|2
+2205|Communication, information et argumentation|2
+2206|Communiquer en anglais|2
+2207|Identifier ses compétences|2
+3101|Principe des systèmes d'exploitation|3
+3102|Services réseaux|3
+3103|Algorithmique avancée|3
+3104|Programmation Web côté serveur|3
+3105|Conception et programmation objet avancées|3
+3106|Bases de données avancées|3
+3201|Probabilités et statistiques|3
+3202|Modélisations mathématiques|3
+3203|Droit des TIC|3
+3204|Gestion des systèmes d'information|3
+3205|Communication professionellle|3
+3206|Collaborer en Anglais|3
+3301|Méthodologie de la production d'applications|3
+3302|Projets tutorés - Projet de synthèse - Semaine bloquée de C|3
+3303|Préciser son projet|3
