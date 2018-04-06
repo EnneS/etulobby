@@ -20,6 +20,8 @@ if(isset($_SESSION["id"])){
         if (!$dao->searchCours($idUser,$_GET["coursAdd"])){
             $dao->addCours($idUser,$_GET["coursAdd"]);
             $data["result"] = "Cours ajouté à la liste de révision !";
+        } else {
+            $data["result"] = "Ce cours est déjà dans la liste de révision.";
         }
     }
 
@@ -28,6 +30,8 @@ if(isset($_SESSION["id"])){
         if ($dao->searchCours($idUser,$_GET["coursDel"])){
             $dao->delCours($idUser,$_GET["coursDel"]);
             $data["result"] = "Cours supprimé de la liste de révision !";
+        } else {
+          $data["result"] = "Ce cours n\'est pas dans la liste de révision.";
         }
     }
 
