@@ -1,7 +1,7 @@
 <?php include("../view/inc/header.php");
 
 if(isset($data["result"])) {
-  // Affichage du message après tentative d'ajout de message (erreur/succès).
+  // Affichage du message après tentative de del de message/del de cours (erreur/succès).
   echo "<script>M.toast({html: '{$data["result"]}', classes: 'rounded'});</script>";
 }
 
@@ -45,7 +45,7 @@ $coursRevision = $data["coursRevision"]; ?>
                     <li class="collection-header"><h5 style="font-size:20px; font-weight: 300;">Liste de révision<span class="new badge" data-badge-caption="cours"><?php echo sizeof($coursRevision) ?></span></h5></li>
 
                     <?php
-
+                    // Affichage liste de révision
                     foreach ($coursRevision as $cours){
                         echo "<li class='collection-item avatar'>";
                         echo "<i class='material-icons circle'>import_contacts</i>";
@@ -70,6 +70,7 @@ $coursRevision = $data["coursRevision"]; ?>
 
                 <ul class="collapsible ">
                   <?php
+                  // Affichage messages des profs
                   foreach ($data["messages"] as $message) {
                     echo "<li class='active'>";
                     echo "<div class='collapsible-header'><i class='material-icons'>warning</i>".$message->titre;

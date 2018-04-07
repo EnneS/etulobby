@@ -1,4 +1,11 @@
-<?php include("../view/inc/header.php"); ?>
+<?php include("../view/inc/header.php");
+
+if(isset($data["result"])) {
+  // Affichage du message après tentative d'ajout de cours (erreur/succès).
+  echo "<script>M.toast({html: '{$data["result"]}', classes: 'rounded'});</script>";
+}
+
+?>
 
     <!--nav bar-->
     <nav>
@@ -29,7 +36,7 @@
             </a>
             <ul>
                 <li><a href="../data/<?php echo $data['idCours'] ?>.pdf" download="<?php echo $data['nomCours']?>"class="btn-floating black tooltipped" data-position="left" data-tooltip="Télécharger le cours"><i class="material-icons">cloud_download</i></a></li>
-                <li><a href="accueil.php?coursAdd=<?php echo $data['idCours'] ?>" class="btn-floating black tooltipped" data-position="left" data-tooltip="Ajouter à la liste de révision"><i class="material-icons">add</i></a></li>
+                <li><a href="afficherCours.php?id=<?php echo $data['idCours'] ?>&nom=<?php echo $data['nomCours'] ?>&coursAdd=<?php echo $data['idCours'] ?>" class="btn-floating black tooltipped" data-position="left" data-tooltip="Ajouter à la liste de révision"><i class="material-icons">add</i></a></li>
             </ul>
         </div>
 

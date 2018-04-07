@@ -1,6 +1,7 @@
 <?php
 include("../view/inc/header_connexion.php");
 
+// Affichage du message si erreur de connexion
 if(isset($data["error"])){
   echo "<script>M.toast({html: '{$data["error"]}', classes: 'rounded'});</script>";
 }

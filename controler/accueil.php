@@ -16,17 +16,6 @@ if(isset($_SESSION["id"])){
 
     $data["user"] = $dao->getUserById($idUser);
 
-
-    // On ajoute le cours si nécessaire
-    if (isset($_GET["coursAdd"])){
-        if (!$dao->searchCours($idUser,$_GET["coursAdd"])){
-            $dao->addCours($idUser,$_GET["coursAdd"]);
-            $data["result"] = "Cours ajouté à la liste de révision !";
-        } else {
-            $data["result"] = "Ce cours est déjà dans la liste de révision.";
-        }
-    }
-
     // On supprime le cours si nécessaire
     if (isset($_GET["coursDel"])){
         if ($dao->searchCours($idUser,$_GET["coursDel"])){

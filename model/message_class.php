@@ -1,7 +1,7 @@
 <?php
     class Message {
-	public $id;
-        public $titre;
-        public $message;
+	    public $id;
+      public $titre;
+      public $message;
     }
 ?>
