@@ -3,6 +3,7 @@
   require_once("../model/user_class.php");
   require_once("../model/module_class.php");
   require_once("../model/cours_class.php");
+  require_once("../model/message_class.php");
   class DAO {
       // L'objet local PDO de la base de donnée
       private $db;
