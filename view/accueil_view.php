@@ -11,7 +11,7 @@ $coursRevision = $data["coursRevision"]; ?>
     <div class="nav-wrapper teal darken-3">
         <div class="brand-logo center">
             <a><img  src="../view/img/open-book.png" style="margin-bottom:-5px; padding:20px 15px 0 0; height: 50px; width: auto;"></a>
-            <a href="/" style="font-weight: bolder; margin-top: -10px;">EtuLobby</a>
+            <a href="index.php" style="font-weight: bolder; margin-top: -10px;">EtuLobby</a>
         </div>
         <ul class="left hide-on-med-and-down">
             <li class="active" ><a href="accueil.php">Accueil</a></li>
@@ -49,9 +49,9 @@ $coursRevision = $data["coursRevision"]; ?>
                     foreach ($coursRevision as $cours){
                         echo "<li class='collection-item avatar'>";
                         echo "<i class='material-icons circle'>import_contacts</i>";
-                        echo "<span class='title'><a style='color: !important;' href='afficherCours.php?id={$cours[0]->id}&nom={$cours[0]->nomCours}'>".$cours[0]->nomCours."</a></span>";
-                        echo "<p>Module M{$cours[0]->numModule}</p>";
-                        echo "<a href='accueil.php?coursDel={$cours[0]->id}' class='secondary-content tooltipped' data-position='bottom' data-tooltip='Supprimer de la liste'><i class=\"material-icons\">clear</i></a>";
+                        echo "<span class='title'><a style='color: !important;' href='afficherCours.php?id={$cours->id}&nom={$cours}'>".$cours."</a></span>";
+                        echo "<p>Module M{$cours->numModule}</p>";
+                        echo "<a href='accueil.php?coursDel={$cours->id}' class='secondary-content tooltipped' data-position='bottom' data-tooltip='Supprimer de la liste'><i class=\"material-icons\">clear</i></a>";
                         echo "</li>";
                     }
 

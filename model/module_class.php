@@ -14,5 +14,8 @@ class Module
     public $enseignants;
     public $cours;
 
+    public function __toString(){
+      return $this->nomModule;
+    }
 
 }

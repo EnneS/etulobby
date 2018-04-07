@@ -10,6 +10,10 @@ class Cours
 {
     public $id;
     public $nomCours;
-    public $nomModule;
+    public $numModule;
+
+public function __toString(){
+    return $this->nomCours;
+}
 
 }
