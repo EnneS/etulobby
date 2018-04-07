@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
@@ -12,8 +12,7 @@
     <meta charset="utf-8">
 
     <link rel="stylesheet" href="style.css">
-    <title>Etulobby - Accueil</title>
-</head>
+  </head>
 
-<body>
-<main>
+  <body>
+    <main>

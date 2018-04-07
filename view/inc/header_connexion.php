@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
@@ -11,21 +11,19 @@
     <meta charset="utf-8">
 
     <link rel="stylesheet" href="style.css">
-    <title>Etulobby - Accueil</title>
-</head>
+  </head>
 
-<body>
+  <body>
+    <main>
+      <nav>
+        <div class="nav-wrapper teal darken-3">
+          <div class="brand-logo center">
+              <a><img  src="../view/img/open-book.png" style="margin-bottom:-5px; padding:20px 15px 0 0; height: 50px; width: auto;"></a>
+              <a href="index.php" style="font-weight: bolder; margin-top: -10px;">EtuLobby</a>
+          </div>
 
-
-<nav>
-    <div class="nav-wrapper teal darken-3">
-        <div class="brand-logo center">
-            <a><img  src="../view/img/open-book.png" style="margin-bottom:-5px; padding:20px 15px 0 0; height: 50px; width: auto;"></a>
-            <a href="index.php" style="font-weight: bolder; margin-top: -10px;">EtuLobby</a>
+          <ul id="nav-mobile" class="left hide-on-med-and-down">
+              <!-- <li><a href="sass.html">nav1</a></li> -->
+          </ul>
         </div>
-
-        <ul id="nav-mobile" class="left hide-on-med-and-down">
-            <!-- <li><a href="sass.html">nav1</a></li> -->
-        </ul>
-    </div>
-</nav>
+      </nav>
