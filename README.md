@@ -1,4 +1,12 @@
-# etulobby
+# EtuLobby
 Projet PHP - Plateforme Étudiante
 
-## Fonctionnalités
+# Fonctionnalités
+  • Inscription
+  • Connexion
+  • Consultation informations personnelles
+  • Consultation modules
+  • Consultation cours
+  • Liste de révision
+  • Messages professeurs
+  • Panel administratif
