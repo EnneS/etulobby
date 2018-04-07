@@ -177,7 +177,7 @@
           $stmt->bindParam(1,$idCours);
           $stmt->execute();
           $cours = $stmt->fetchAll(PDO::FETCH_CLASS,"Cours");
-          return $cours;
+          return $cours[0];
       }
 
       function getModulesByEnseignant($idUser) {

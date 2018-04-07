@@ -5,7 +5,7 @@
         <div class="nav-wrapper teal darken-3">
             <div class="brand-logo center">
                 <a><img  src="../view/img/open-book.png" style="margin-bottom:-5px; padding:20px 15px 0 0; height: 50px; width: auto;"></a>
-                <a href="/" style="font-weight: bolder; margin-top: -10px;">EtuLobby</a>
+                <a href="index.php" style="font-weight: bolder; margin-top: -10px;">EtuLobby</a>
             </div>
             <ul class="left hide-on-med-and-down">
                 <li><a href="accueil.php">Accueil</a></li>
@@ -41,13 +41,13 @@
             echo '<li>';
 
             //partie modules
-            echo "<div class='collapsible-header'><i class='material-icons'>folder</i>M{$module->id} - {$module->nomModule}</div>";
+            echo "<div class='collapsible-header'><i class='material-icons'>folder</i>M{$module->id} - {$module}</div>";
 
             //partie cours - nom des cours
             echo "<div class='collapsible-body'><span><ul class='collection'>";
             foreach ($module->cours as $cours){
                 echo "<li class='collection-item'>";
-                echo "<a style='font-weight:300;' href='afficherCours.php?id=".$cours->id."&nom=".$cours->nomCours."'>$cours->nomCours</a>";
+                echo "<a style='font-weight:300;' href='afficherCours.php?id=".$cours->id."&nom=".$cours."'>$cours</a>";
                 echo "</li>";
             }
             echo "</ul></span></div>";

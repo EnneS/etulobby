@@ -4,7 +4,7 @@
         <div class="nav-wrapper teal darken-3">
             <div class="brand-logo center">
                 <a><img  src="../view/img/open-book.png" style="margin-bottom:-5px; padding:20px 15px 0 0; height: 50px; width: auto;"></a>
-                <a href="/" style="font-weight: bolder; margin-top: -10px;">EtuLobby</a>
+                <a href="index.php" style="font-weight: bolder; margin-top: -10px;">EtuLobby</a>
             </div>
             <ul class="left hide-on-med-and-down">
                 <li><a href="accueil.php">Accueil</a></li>

@@ -5,13 +5,13 @@
         <div class="nav-wrapper teal darken-3">
             <div class="brand-logo center">
                 <a><img  src="../view/img/open-book.png" style="margin-bottom:-5px; padding:20px 15px 0 0; height: 50px; width: auto;"></a>
-                <a href="/" style="font-weight: bolder; margin-top: -10px;">EtuLobby</a>
+                <a href="index.php" style="font-weight: bolder; margin-top: -10px;">EtuLobby</a>
             </div>
             <ul class="left hide-on-med-and-down">
                 <li><a href="accueil.php">Accueil</a></li>
                 <li><a href="afficherModules.php">Mes cours</a></li>
                 <li><a href="afficherInformations.php">Mes informations</a></li>
-                <?php if($data["idUser"] == 1) { ?> <li><a href="#">Administration</a></li> <?php } ?>
+                <?php if($data["idUser"] == 1) { ?> <li><a href="afficherAdministration.php">Administration</a></li> <?php } ?>
             </ul>
             <ul class="right hide-on-med-and-down">
                 <li><a href="deconnexion.php?logout='true'">Déconnexion</a></li>
