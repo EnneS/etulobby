@@ -10,7 +10,7 @@
                 <li><a href="accueil.php">Accueil</a></li>
                 <li><a href="afficherModules.php">Mes cours</a></li>
                 <li class="active" ><a href="afficherInformations.php">Mes informations</a></li>
-                <?php if($data["idUser"] == 1) { ?> <li><a href="afficherAdministration.php">Administration</a></li> <?php } ?>
+                <?php if($data["user"]->rang == 1) { ?> <li><a href="afficherAdministration.php">Administration</a></li> <?php } ?>
             </ul>
             <ul class="right hide-on-med-and-down">
                 <li><a href="deconnexion.php?logout='true'">Déconnexion</a></li>
@@ -39,10 +39,10 @@
 
                         <div class="col s6 l9 offset-l1">
                             <ul class="collection">
-                                <li class="collection-item">Nom : <?php echo $data["nom"]; ?></li>
-                                <li class="collection-item">Prénom : <?php echo $data["prenom"]; ?></li>
+                                <li class="collection-item">Nom : <?php echo $data["user"]->nom; ?></li>
+                                <li class="collection-item">Prénom : <?php echo $data["user"]->prenom; ?></li>
                                 <?php // On affiche le semestre si != 0 (0 étant attribué pour les profs)
-                                if($data["semestre"] != "S0") { ?> <li class="collection-item">Semestre : <?php echo $data["semestre"] ?></li> <?php } ?>
+                                if($data["user"]->numSemestre != 0) { ?> <li class="collection-item">Semestre : S<?php echo $data["user"]->numSemestre ?></li> <?php } ?>
                                 <li class="collection-item">Groupe : <?php echo $data["groupe"] ?></li>
                             </ul>
                         </div>

@@ -9,11 +9,8 @@ session_start();
 include_once("../model/DAO_class.php");
 
 if(isset($_SESSION["id"])){
-  $data["idUser"] = $_SESSION["id"];
-  $user = $dao->getUserById($data["idUser"]);
-  $data["nom"] = $user->nom;
-  $data["prenom"] = $user->prenom;
-  $data["semestre"] = "S".$user->numSemestre;
+  $user = $dao->getUserById($_SESSION["id"]);
+  $data["user"] = $user;
   $data["groupe"] = $user->rang==0?"Etudiant":"Professeur";
 
   include_once("../view/informations_view.php");

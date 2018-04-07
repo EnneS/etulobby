@@ -9,7 +9,7 @@ session_start();
 include_once("../model/DAO_class.php");
 
 if(isset($_SESSION["id"])){
-  $data["idUser"] = $_SESSION["id"];
+  $data["user"] = $dao->getUserById($_SESSION["id"]);
 
   if (isset($_GET["id"]) && isset($_GET["nom"])){
       $data["idCours"] = $_GET["id"];

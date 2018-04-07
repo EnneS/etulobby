@@ -1,6 +1,8 @@
 
 <?php
 include("../view/inc/header_connexion.php");
+
+// Toasts
 if(isset($data["result"])) {
   if ($data["resultId"] == 1){
     // Redirection si l'inscription est un succès + on dit le login à l'utilisateur.

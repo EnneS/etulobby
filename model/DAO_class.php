@@ -207,8 +207,14 @@
         $stmt->execute();
       }
 
+      function delMessage($id){
+        $stmt = $this->db->prepare("DELETE FROM message WHERE id = ?");
+        $stmt->bindParam(1,$id);
+        $stmt->execute();
+      }
+
       function getAllMessage(){
-        $stmt = $this->db->prepare("SELECT * FROM message");
+        $stmt = $this->db->prepare("SELECT * FROM message ORDER BY id desc");
         $stmt->execute();
         $messages = $stmt->fetchAll(PDO::FETCH_CLASS,"Message");
         return $messages;

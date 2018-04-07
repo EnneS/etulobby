@@ -11,7 +11,7 @@
                 <li><a href="accueil.php">Accueil</a></li>
                 <li class="active"><a href="afficherModules.php">Mes cours</a></li>
                 <li><a href="afficherInformations.php">Mes informations</a></li>
-                <?php if($data["idUser"] == 1) { ?> <li><a href="afficherAdministration.php">Administration</a></li> <?php } ?>
+                <?php if($data["user"]->rang == 1) { ?> <li><a href="afficherAdministration.php">Administration</a></li> <?php } ?>
             </ul>
             <ul class="right hide-on-med-and-down">
                 <li><a href="deconnexion.php?logout='true'">Déconnexion</a></li>

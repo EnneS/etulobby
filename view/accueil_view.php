@@ -17,7 +17,7 @@ $coursRevision = $data["coursRevision"]; ?>
             <li class="active" ><a href="accueil.php">Accueil</a></li>
             <li><a href="afficherModules.php">Mes cours</a></li>
             <li><a href="afficherInformations.php">Mes informations</a></li>
-            <?php if($data["idUser"] == 1) { ?> <li><a href="afficherAdministration.php">Administration</a></li> <?php } ?>
+            <?php if($data["user"]->rang == 1) { ?> <li><a href="afficherAdministration.php">Administration</a></li> <?php } ?>
 
         </ul>
         <ul class="right hide-on-med-and-down">
@@ -72,7 +72,14 @@ $coursRevision = $data["coursRevision"]; ?>
                   <?php
                   foreach ($data["messages"] as $message) {
                     echo "<li class='active'>";
-                    echo "<div class='collapsible-header'><i class='material-icons'>warning</i>".$message->titre."</div>";
+                    echo "<div class='collapsible-header'><i class='material-icons'>warning</i>".$message->titre;
+
+                    // Affichage de la suppression du message pour les professeurs
+                    if($data["user"]->rang == 1){
+                      echo "<a href='accueil.php?messageDel={$message->id}' class='tooltipped righ-align' style='width:30px; flex-align:flex-end' data-position='bottom' data-tooltip='Supprimer le message'><i class=\"material-icons\">clear</i></a>";
+                    }
+
+                    echo "</div>";
                     echo "<div class='collapsible-body'><span>".$message->message."</span></div>";
                     echo"</li>";
                   }
