@@ -6,7 +6,7 @@
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="../view/css/materialize.min.css"  media="screen,projection"/>
     <link type="text/css" rel="stylesheet" href="../view/css/style.css"  media="screen,projection"/>
-    <script src="../view/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta charset="utf-8">

@@ -43,3 +43,9 @@ CREATE TABLE revision (
   FOREIGN KEY (idCours) REFERENCES cours(id),
   PRIMARY KEY(idUser, idCours)
 );
+
+CREATE TABLE message (
+  id INTEGER PRIMARY KEY,
+  titre TEXT,
+  message TEXT
+);

@@ -128,8 +128,6 @@
       }
 
       function searchCours($idUser, $idCours){
-          //var_dump($idUser);
-          //var_dump($idCours);
           $req = "SELECT * FROM revision WHERE idUser = ? AND idCours = ?";
           $stmt = $this->db->prepare($req);
           $stmt->bindParam(1,$idUser);
@@ -165,13 +163,10 @@
           $stmt->execute();
           $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-          //var_dump($res);
           $coursRevision = array();
           foreach ($res as $idCours){
-              //var_dump($idCours["idCours"]);
               array_push($coursRevision,$this->getCoursById($idCours["idCours"]));
           }
-          //var_dump($coursRevision);
           return $coursRevision;
       }
 
@@ -190,7 +185,7 @@
           $stmt->bindParam(1,$idUser);
           $stmt->execute();
           $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
-          
+
           return $res;
       }
 
@@ -202,6 +197,20 @@
           $result = $stmt->fetchAll(PDO::FETCH_CLASS,"Module");
           return $result;
 
+      }
+
+      function addMessage($titre, $message){
+        $stmt = $this->db->prepare("INSERT INTO message VALUES ((SELECT max(id) + 1 FROM message), ?, ?)");
+        $stmt->bindParam(1,$titre);
+        $stmt->bindParam(2,$message);
+        $stmt->execute();
+      }
+
+      function getAllMessage(){
+        $stmt = $this->db->prepare("SELECT * FROM message");
+        $stmt->execute();
+        $messages = $stmt->fetchAll(PDO::FETCH_CLASS,"Message");
+        return $messages;
       }
 
   }

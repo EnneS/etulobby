@@ -1,4 +1,10 @@
-<?php include("../view/inc/header.php"); ?>
+<?php include("../view/inc/header.php");
+
+if(isset($data["result"])) {
+  // Affichage du message après tentative d'ajout de message (erreur/succès).
+  echo "<script>M.toast({html: '{$data["result"]}', classes: 'rounded'});</script>";
+}
+ ?>
 
 <nav>
     <div class="nav-wrapper teal darken-3">
@@ -32,7 +38,7 @@
                 <div class="row">
 
                   <div class="input-field col s8 offset-s2">
-                      <input id="nom" name="nom" type="text" class="validate">
+                      <input id="titre" name="titre" type="text" class="validate">
                       <label class="active" for="nom">Titre</label>
                   </div>
 
