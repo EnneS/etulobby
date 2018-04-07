@@ -10,7 +10,7 @@ class Module
 {
     public $id;
     public $nomModule;
-    public $nomSemestre;
+    public $numSemestre;
     public $enseignants;
     public $cours;
 

@@ -91,7 +91,7 @@
      function getModulesBySemestre($id){
        $req = "SELECT * FROM module WHERE numSemestre = ?";
        $stmt = $this->db->prepare($req);
-      $stmt->bindParam(1,$id);
+       $stmt->bindParam(1,$id);
        $stmt->execute();
        $result = $stmt->fetchAll(PDO::FETCH_CLASS,"Module");
 
@@ -182,6 +182,26 @@
           $stmt->execute();
           $cours = $stmt->fetchAll(PDO::FETCH_CLASS,"Cours");
           return $cours;
+      }
+
+      function getModulesByEnseignant($idUser) {
+          $req = "SELECT idModule FROM enseigne WHERE idUser = ?";
+          $stmt = $this->db->prepare($req);
+          $stmt->bindParam(1,$idUser);
+          $stmt->execute();
+          $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
+          
+          return $res;
+      }
+
+      function getModuleById($id) {
+          $req = "SELECT * FROM module WHERE id = ?";
+          $stmt = $this->db->prepare($req);
+          $stmt->bindParam(1,$id);
+          $stmt->execute();
+          $result = $stmt->fetchAll(PDO::FETCH_CLASS,"Module");
+          return $result;
+
       }
 
   }
