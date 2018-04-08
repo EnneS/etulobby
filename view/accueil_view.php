@@ -81,7 +81,7 @@ $coursRevision = $data["coursRevision"]; ?>
 
                   // Affichage de la suppression du message pour les professeurs
                   if($data["user"]->rang == 1){
-                    echo "<a href='accueil.php?messageDel={$message->id}' class='tooltipped righ-align' style='width:30px; flex-align:flex-end' data-position='bottom' data-tooltip='Supprimer le message'><i class=\"material-icons\">clear</i></a>";
+                    echo "<a href='accueil.php?messageDel={$message->id}' class='tooltipped secondary-content' style='width:30px; position: inherit; ' data-position='bottom' data-tooltip='Supprimer le message'><i class=\"material-icons\">clear</i></a>";
                   }
 
                   echo "</div>";

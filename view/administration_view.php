@@ -47,16 +47,21 @@ if(isset($data["result"])) {
           <!-- ajout de messages -->
           <div class="col l7">
             <div class="row card-panel grey lighten-4 center-align">
-              <h5 style="font-weight: 500;">Ajouter un message</h4>
+
+                <div class="row center">
+                    <h5 style="font-size:20px; font-weight: 300;">Ajouter un message</h5>
+                </div>
+                <div class="divider" style="margin-bottom: 30px;"></div>
+
               <form method="post" action="afficherAdministration.php">
                 <div class="row">
 
-                  <div class="input-field col s8 offset-s2">
+                  <div class="input-field col l10 offset-l1">
                     <input id="titre" name="titre" type="text" class="validate">
                     <label class="active" for="nom">Titre</label>
                   </div>
 
-                  <div class="input-field col s8 offset-s2">
+                  <div class="input-field col l10 offset-l1">
                     <textarea id="message" name="message" class="materialize-textarea"></textarea>
                     <label for="textarea1">Message</label>
                   </div>
@@ -75,39 +80,50 @@ if(isset($data["result"])) {
           <!-- manage élèves -->
           <div class="col l4 offset-l1">
             <div class="row card-panel grey lighten-4">
-              <h5 style="font-weight: 500; ">Actualiser les infos d'un élève</h4>
-              <form method="post" action="afficherAdministration.php">
-                <div class="col s12 m6">
-
-                  <label>Utilisateurs</label>
-                  <select name="idEleve" class="browser-default">
-                    <option value="" disabled selected>Choisir l'élève</option>
-                    <?php
-                      foreach ($data["eleves"] as $value) {
-                        echo "<option value={$value->id}>{$value->nom} {$value->prenom}</option>";
-                      }
-                    ?>
-                  </select>
-
-                  <label>Semestre</label>
-                  <select name="numSemestre" class="browser-default">
-                    <option value="" disabled selected>Choisir un semestre</option>
-                    <option value="1">Semestre 1</option>
-                    <option value="2">Semestre 2</option>
-                    <option value="3">Semestre 3</option>
-                    <option value="4">Semestre 4</option>
-                  </select>
-
-                  <div class="row center-align"></div>
-                  <button class="btn waves-effect waves-light grey darken-4" type="submit" name="validerSemestre">Valider <i class="material-icons right">check</i></button>
-
+                <div class="row center">
+                    <h5 style="font-size:20px; font-weight: 300;">Actualiser les profils</h5>
                 </div>
-              </form>
-            </div>
+                <div class="divider" style="margin-bottom: 30px;"></div>
+
+
+
+                <div class="row center">
+
+                    <form method="post" action="afficherAdministration.php">
+
+                        <div class="input-field col s12 l10 offset-l1">
+                            <select name="idEleve">
+                                <option value="" disabled selected>Choisir un élève</option>
+                                <?php
+                                foreach ($data["eleves"] as $value) {
+                                    echo "<option value={$value->id}>{$value->nom} {$value->prenom}</option>";
+                                }
+                                ?>
+                            </select>
+                            <label>Utilisateurs</label>
+                        </div>
+
+                        <div class="input-field col s12 l10 offset-l1">
+                            <select name="numSemestre">
+                                <option value="" disabled selected>Choisir un semstre</option>
+                                <option value="1">Semestre 1</option>
+                                <option value="2">Semestre 2</option>
+                                <option value="3">Semestre 3</option>
+                                <option value="4">Semestre 4</option>
+                            </select>
+                            <label>Semestre</label>
+                        </div>
+
+                        <div class="row center-align">
+                            <button class="btn waves-effect waves-light grey darken-4" type="submit" name="validerSemestre">Valider <i class="material-icons right">check</i></button>
+                        </div>
+
+                     </form>
+                </div>
           </div>
 
         </div>
-
+        </div>
       </div>
 
 
