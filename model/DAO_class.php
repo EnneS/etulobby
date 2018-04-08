@@ -64,7 +64,7 @@
         // Uppercase au premier carac de $nom et $prenom
         $nom = ucfirst($nom);
         $prenom = ucfirst($prenom);
-
+        $mdp = password_hash($mdp, PASSWORD_DEFAULT);
         $stmt->bindParam(1, $nom);
         $stmt->bindParam(2, $prenom);
         $stmt->bindParam(3, $login);
@@ -80,7 +80,7 @@
         $stmt->execute();
         $res = $stmt->fetchAll();
 
-        if($stmt && isset($res[0]) && $mdp == $res[0]["mdp"]){
+        if($stmt && isset($res[0]) && password_verify($mdp, $res[0]["mdp"])){
           return true;
         } else {
           return false;
