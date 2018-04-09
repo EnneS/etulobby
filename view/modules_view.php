@@ -32,37 +32,125 @@
           </div>
         </div>
 
-        <div class="divider" style="margin-bottom: 30px;"></div>
+          <div class="divider" style="margin-bottom: 30px;"></div>
 
-        <!--affichage modules -->
-        <ul class="collapsible popout" data-collapsible="accordion">
-          <?php
-          foreach($data["modules"] as $module){
-              echo '<li>';
+          <?php if ($data["sectionRecherche"]) { ?>
 
-              // ID et Nom du module
-              echo "<div class='collapsible-header'><i class='material-icons'>folder</i>M{$module->id} - {$module}</div>";
 
-              // Liste des cours du module
-              echo "<div class='collapsible-body'><span><ul class='collection'>";
-              foreach ($module->cours as $cours){
-                echo "<li class='collection-item'>";
-                echo "<a style='font-weight:300;' href='afficherCours.php?id=".$cours->id."&nom=".$cours."'>$cours</a>";
-                echo "</li>";
+          <div class="row">
+
+              <div class="col l3">
+
+                  <div class="row center">
+                      <h5 style="font-size:20px; font-weight: 300;">Options de recherche</h5>
+                  </div>
+
+                  <form method="post" action="afficherModules.php">
+
+                      <div class="row" center>
+                          <div class="input-field col s12">
+                              <select name="numSemestre">
+                                  <option value="" disabled selected>Choisir un semestre</option>
+                                  <option value="1">Semestre 1</option>
+                                  <option value="2">Semestre 2</option>
+                                  <option value="3">Semestre 3</option>
+                                  <option value="4">Semestre 4</option>
+                              </select>
+                              <label>Semestre</label>
+                          </div>
+
+                      </div>
+
+                      <div class="row" center>
+                          <div class="col s12">
+                              <label>Nombre de module a afficher</label>
+                              <p class="range-field disabled">
+                                  <input type="range" name="nbModule" min="0" max="15" />
+                              </p>
+                          </div>
+                      </div>
+
+                      <div class="row center-align">
+                          <button class="btn waves-effect waves-light grey darken-4" type="submit" name="rechercherModule">Rechercher<i class="material-icons right">search</i></button>
+                      </div>
+                  </form>
+
+              </div>
+
+              <?php } ?>
+
+              <div class="col l8 offset-l1">
+
+                  <!--affichage modules -->
+                  <ul class="collapsible popout" data-collapsible="accordion">
+                      <?php
+
+                      for ($i=0; $i < $data["nbModules"]; $i++){
+
+                          $module = $data["modules"][$i];
+
+                          echo '<li>';
+
+                          // ID et Nom du module
+                          echo "<div class='collapsible-header'><i class='material-icons'>folder</i>M{$module->id} - {$module}</div>";
+
+                          // Liste des cours du module
+                          echo "<div class='collapsible-body'><span><ul class='collection'>";
+
+                          foreach ($module->cours as $cours){
+                              echo "<li class='collection-item'>";
+                              echo "<a style='font-weight:300;' href='afficherCours.php?id=".$cours->id."&nom=".$cours."'>$cours</a>";
+                              echo "</li>";
+                          }
+                          echo "</ul></span></div>";
+
+                          // Liste des enseignants du modules
+                          echo "<div class='collapsible-body'><span style='font-style: italic;'> Enseigné par :";
+                          foreach ($module->enseignants as $enseignant){
+                              echo " $enseignant->nom $enseignant->prenom |";
+                          }
+                          echo "</span></div>";
+
+                          echo '</li>';
+
+                      }
+                      ?>
+                  </ul>
+
+              </div>
+
+          </div>
+
+          <div class="divider" style="margin-bottom: 30px;"></div>
+
+          <div class="row center">
+
+              <ul class="pagination">
+
+              <?php
+
+              /*
+
+              echo "<li class='waves-effect'><a href=''><i class='material-icons'>chevron_left</i></a></li>";
+
+              for ($i = 1; $i <= $data["nbPage"]; $i++){
+                  echo "<li class=''><a href='afficherModules.php?p={$i}'>{$i}</a></li>";
               }
-              echo "</ul></span></div>";
 
-              // Liste des enseignants du modules
-              echo "<div class='collapsible-body'><span style='font-style: italic;'> Enseigné par :";
-              foreach ($module->enseignants as $enseignant){
-                echo " $enseignant->nom $enseignant->prenom |";
-              }
-              echo "</span></div>";
+              echo "<li class='waves-effect'><a href=''><i class='material-icons'>chevron_right</i></a></li>";
 
-              echo '</li>';
-          }
-          ?>
-        </ul>
+              */
+
+              ?>
+
+              </ul>
+
+          </div>
+
+
+
+
+
 
       </div>
 

@@ -44,8 +44,38 @@ $coursRevision = $data["coursRevision"]; ?>
         <!-- content -->
         <div class="row">
 
+
+            <!-- Messages de prof -->
+            <div class="col l6">
+                <div class="row card-panel grey lighten-4 ">
+
+                    <div class="row center">
+                        <h5 style="font-size:20px; font-weight: 300;">Informations</h5>
+                    </div>
+
+                    <ul class="collapsible ">
+                        <?php
+                        // Affichage messages des profs
+                        foreach ($data["messages"] as $message) {
+                            echo "<li class='active'>";
+                            echo "<div class='collapsible-header'><i class='material-icons'>warning</i>".$message->titre;
+
+                            // Affichage de la suppression du message pour les professeurs
+                            if($data["user"]->rang == 1){
+                                echo "<a href='accueil.php?messageDel={$message->id}' class='tooltipped secondary-content' style='width:30px; position: inherit; ' data-position='bottom' data-tooltip='Supprimer le message'><i class=\"material-icons\">clear</i></a>";
+                            }
+
+                            echo "</div>";
+                            echo "<div class='collapsible-body'><span>".$message->message."</span></div>";
+                            echo"</li>";
+                        }
+                        ?>
+                    </ul>
+                </div>
+            </div>
+
           <!-- Liste de révision -->
-          <div class="col l7">
+          <div class="col l5 offset-l1">
             <div class="row card-panel grey lighten-4 ">
               <ul class="collection with-header">
                 <li class="collection-header"><h5 style="font-size:20px; font-weight: 300;">Liste de révision<span class="new badge" data-badge-caption="cours"><?php echo sizeof($coursRevision) ?></span></h5></li>
@@ -64,34 +94,6 @@ $coursRevision = $data["coursRevision"]; ?>
             </div>
           </div>
 
-          <!-- Messages de prof -->
-          <div class="col l4 offset-l1">
-            <div class="row card-panel grey lighten-4 ">
-
-              <div class="row center">
-                <h5 style="font-size:20px; font-weight: 300;">Informations</h5>
-              </div>
-
-              <ul class="collapsible ">
-                <?php
-                // Affichage messages des profs
-                foreach ($data["messages"] as $message) {
-                  echo "<li class='active'>";
-                  echo "<div class='collapsible-header'><i class='material-icons'>warning</i>".$message->titre;
-
-                  // Affichage de la suppression du message pour les professeurs
-                  if($data["user"]->rang == 1){
-                    echo "<a href='accueil.php?messageDel={$message->id}' class='tooltipped secondary-content' style='width:30px; position: inherit; ' data-position='bottom' data-tooltip='Supprimer le message'><i class=\"material-icons\">clear</i></a>";
-                  }
-
-                  echo "</div>";
-                  echo "<div class='collapsible-body'><span>".$message->message."</span></div>";
-                  echo"</li>";
-                }
-                 ?>
-              </ul>
-            </div>
-          </div>
 
         </div>
 
